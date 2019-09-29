@@ -1,0 +1,61 @@
+<style lang="less">
+	.sendInfo {
+	}
+</style>
+<template>
+	<view class="sendInfo">
+		<form bindsubmit="formSubmit" report-submit='true'>
+		  <view class="section">
+		    <view class="section__title">input</view>
+		    <input name="input" placeholder="please input here" />
+		  </view>
+		  <view class="btn-area">
+		    <text>{{id}}</text>
+				<view class="capy" @tap="copyLink()">{{id}}</view>
+		    <button formType="submit">发送模板消息</button>
+		  </view>
+		</form>
+	</view>
+</template>
+
+<script>
+	import wepy from 'wepy'
+	import request from '@/utils/request.js';
+	import apifunc from '@/api/index.js';
+	import {baseUrl} from "@/utils/env.js";
+	export default class sendInfo extends wepy.page {
+		data = {
+			lanage:"",
+			lang:"",
+			access_token:"",
+			id:""
+		}
+		methods = {
+			copyLink() {
+      if (this.id) {
+        wx.setClipboardData({
+          data: this.id,
+          success: function(res) {
+            wx.getClipboardData({
+              success: function(res) {}
+            });
+          }
+        });
+      }
+    },
+			formSubmit(e){
+				console.log("formId:" + e.detail.formId)
+			 var that=this;
+			 that.id=e.detail.formId;
+			 that.$apply();
+		  	}
+		}
+		onLoad() {
+			var _this = this
+			this.lanage = this.$parent.globalData.language;
+			this.lang = this.$parent.globalData.langtxt
+			this.$apply();
+		}
+	}
+</script>
+	

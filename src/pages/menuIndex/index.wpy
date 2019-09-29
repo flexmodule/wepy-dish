@@ -1,0 +1,1701 @@
+<style lang="less">
+page {
+  width: 100%;
+  height: 100%;
+}
+.Home {
+  width: 100%;
+  height: 100%;
+  .back {
+    width: 100%;
+    height: 220rpx;
+    position: relative;
+    .my_order {
+      width: 160rpx;
+      height: 60rpx;
+      color: #fff;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0rpx 0rpx 16rpx 16rpx;
+      font: 28rpx/60rpx '';
+      position: absolute;
+      top: 0;
+      right: 40rpx;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 16rpx;
+        height: 16rpx;
+        border-radius: 50%;
+        background: #ff5050;
+        top: 5rpx;
+        right: 5rpx;
+      }
+    }
+    .backimg {
+      width: 100%;
+      height: 100%;
+    }
+    .logo {
+      width: 160rpx;
+      height: 160rpx;
+      box-shadow: 0rpx 16rpx 24rpx 0rpx #eee;
+      border-radius: 16rpx;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -60rpx;
+      margin: auto;
+      image {
+        width: 100%;
+        height: 100%;
+        border-radius: 16rpx;
+      }
+    }
+  }
+  .shopname {
+    font: 700 40rpx/40rpx '';
+    text-align: center;
+    padding: 50rpx 0 20rpx;
+  }
+  .charge {
+    display: flex;
+    padding: 10rpx 10rpx 60rpx;
+    font: 26rpx/26rpx '';
+    color: #ff5050;
+    justify-content: center;
+		align-items: center;
+		.The_service_fee,.Tax_point {
+			text {
+				&:nth-child(2) {
+					margin-right: 10rpx;
+				}
+			}
+		}
+    .Tax_point {
+      margin: 0 10rpx;
+    }
+    .data {
+      display: flex;
+      align-items: center;
+    }
+	}
+	.english {
+		font: 23rpx/23rpx '';
+	}
+
+  .main-l {
+    width: 220rpx;
+    overflow-y: scroll;
+    font: 26rpx/26rpx '';
+    float: left;
+    color: #282828;
+    background-color: #eeeeee;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50rpx;
+    z-index: 86;
+    padding: 0 0 150rpx;
+    box-sizing: border-box;
+    .data {
+      height: 100rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      .data-c {
+        width: 100%;
+        text-align: center;
+        word-wrap: break-word;
+      }
+      .total {
+        position: absolute;
+        width: 32rpx;
+        text-align: center;
+        font: 22rpx/32rpx '';
+        color: #fff;
+        height: 32rpx;
+        background-color: #ff6666;
+        border-radius: 50%;
+        top: 0;
+        right: 0;
+      }
+    }
+    .menuback {
+      background: #fff;
+    }
+  }
+  .main-r {
+    padding: 20rpx 0 120rpx 220rpx;
+    box-sizing: border-box;
+    .maindetail {
+      .title {
+        font: 700 26rpx/26rpx '';
+        padding: 5rpx 30rpx;
+      }
+      .mainbody {
+        .data {
+          padding: 20rpx;
+          box-sizing: border-box;
+          height: 220rpx;
+          display: flex;
+          .data-l {
+            width: 160rpx;
+            height: 160rpx;
+            border-radius: 16rpx;
+            image {
+              width: 100%;
+              height: 100%;
+              border-radius: 16rpx;
+            }
+          }
+          .data-r {
+            flex: 1;
+            margin-left: 15rpx;
+            padding: 10rpx 0;
+            .name {
+              color: #282828;
+              font: 700 28rpx/28rpx '';
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              overflow: hidden;
+              height: 56rpx;
+            }
+            .sold {
+              font: 22rpx/22rpx '';
+              color: #f89800;
+              margin: 8rpx 0; 
+            }
+            .data-r-b {
+              display: flex;
+              justify-content: space-between;
+              .price {
+                display: flex;
+                color: #ff5050;
+                .currency {
+                  font: 22rpx/40rpx '';
+                }
+                .pricetxt {
+                  font: 32rpx/32rpx '';
+                }
+              }
+              .opera {
+                display: flex;
+                .num {
+                  margin: 0 8rpx;
+                  font: 32rpx/48rpx '';
+                  color: #282828;
+                }
+                .minus,
+                .add {
+                  width: 48rpx;
+                  height: 48rpx;
+                  image {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+              }
+            }
+            .rmb {
+                font: 22rpx/22rpx "";
+                color: #999;
+              }
+          }
+        }
+      }
+    }
+  }
+  .kindsdetail {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    .detailbox {
+      background: #fff;
+      width: 100%;
+      height: 994rpx;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      .title {
+        position: relative;
+        border-bottom: 1rpx solid #eee;
+        .close {
+          position: absolute;
+          width: 48rpx;
+          height: 48rpx;
+          top: 30rpx;
+          right: 40rpx;
+          image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .titletxt {
+        font: 32rpx/110rpx '';
+        text-align: center;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 40rpx;
+          height: 10rpx;
+          background-color: #ff6666;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+      .detailbody {
+        padding: 40rpx;
+        .data {
+          padding: 40rpx 0;
+          border-bottom: 1rpx solid #eee;
+          &:nth-last-child(1) {
+            border: 0;
+          }
+          .data-t {
+            font: 700 26rpx/26rpx '';
+            color: #282828;
+            position: relative;
+            padding-left: 32rpx;
+            &::before {
+              content: '';
+              position: absolute;
+              width: 10rpx;
+              height: 10rpx;
+              background-color: #ff6666;
+              left: 0;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+            }
+            text {
+              font: 22rpx/26rpx "";
+              color: #999;
+            }
+          }
+          .data-b {
+            padding: 30rpx 32rpx;
+            font: 32rpx/35rpx '';
+            color: #777;
+          }
+          .description {
+            height: 150rpx;
+            overflow: scroll;
+          }
+        }
+      }
+      .detailfoot {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        .detailfoot-t {
+          display: flex;
+          padding: 40rpx 40rpx 40rpx 220rpx;
+          justify-content: space-between;
+          .sold {
+            font: 26rpx/48rpx '';
+            color: #f89800;
+          }
+          .opera {
+            display: flex;
+            .num {
+              margin: 0 8rpx;
+              font: 32rpx/48rpx '';
+              color: #282828;
+            }
+            .minus,
+            .add {
+              width: 48rpx;
+              height: 48rpx;
+              image {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+        .detailfoot-b {
+          width: 100%;
+          height: 120rpx;
+          background-color: #ff6666;
+          position: relative;
+          .mainimg {
+            position: absolute;
+            width: 160rpx;
+            height: 160rpx;
+            border-radius: 16rpx;
+            top: -100rpx;
+            left: 40rpx;
+            image {
+              width: 100%;
+              border-radius: 16rpx;
+              height: 100%;
+            }
+          }
+          .chosen {
+            text-align: right;
+            font: 40rpx/120rpx '';
+            color: #fff;
+            padding-right: 62rpx;
+          }
+        }
+      }
+    }
+  }
+  .cast {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    .castbox {
+      max-height: 1000rpx;
+      overflow-y: scroll;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 120rpx;
+      background: #fff;
+      .castbox-c {
+        padding-bottom: 50rpx;
+      }
+      .title {
+        position: relative;
+        border-bottom: 1rpx solid #eee;
+        .clearcast {
+          position: absolute;
+          font: 26rpx/110rpx '';
+          color: #aaaaaa;
+          right: 20rpx;
+          top: 0;
+        }
+      }
+      .titletxt {
+        font: 32rpx/110rpx '';
+        text-align: center;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 40rpx;
+          height: 10rpx;
+          background-color: #ff6666;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+      .castbody {
+        .data {
+          display: flex;
+          padding: 30rpx 40rpx 28rpx;
+          align-items: center;
+          .data-l {
+            width: 400rpx;
+            word-break: break-all;
+            .name {
+              color: #282828;
+              font: 32rpx/32rpx '';
+              margin-bottom: 9rpx;
+            }
+            .spec {
+              display: flex;
+              font: 22rpx/22rpx '';
+              color: #777;
+            }
+          }
+          .data-c {
+            width: 200rpx;
+            color: #ff5050;
+            .price {
+              display: flex;
+              .currency {
+                font: 22rpx/45rpx '';
+              }
+              .pricetxt {
+                font: 32rpx/40rpx '';
+              }
+            }
+            .rmb {
+              .pricetxt {
+                font: 22rpx/25rpx '';
+                color: #999;
+              }
+            }
+          }
+          .data-r {
+            .opera {
+              display: flex;
+              .num {
+                margin: 0 8rpx;
+                font: 32rpx/48rpx '';
+                color: #282828;
+              }
+              .minus,
+              .add {
+                width: 48rpx;
+                height: 48rpx;
+                image {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .deliverFee {
+    padding: 6rpx 17rpx;
+    background-color: #ff5050;
+    border-radius: 4rpx;
+    font: 22rpx/22rpx '';
+    position: fixed;
+    z-index: 92;
+    bottom: 140rpx;
+    right: 20rpx;
+    color: #fff;
+  }
+  .settle {
+    width: 100%;
+    position: fixed;
+    height: 120rpx;
+    bottom: 0;
+    background: #fff;
+    display: flex;
+    z-index: 92;
+    .img {
+      position: absolute;
+      width: 128rpx;
+      height: 128rpx;
+      top: -38rpx;
+      left: 40rpx;
+      z-index: 93;
+      .totalnum {
+        position: absolute;
+        width: 32rpx;
+        height: 32rpx;
+        border-radius: 50%;
+        background-color: #ff5050;
+        font: 22rpx/32rpx '';
+        text-align: center;
+        top: 0;
+        right: 0;
+        color: #fff;
+      }
+      image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .totalprice {
+      flex: 1;
+      text-align: right;
+      padding: 20rpx 28rpx 0 0;
+      position: relative;
+      z-index: 92;
+      .rmb {
+        position: absolute;
+        padding: 6rpx 17rpx;
+        border-radius: 3rpx;
+        background: #ff5050;
+        font: 22rpx/22rpx "";
+        z-index: 92;
+        top: -50rpx;
+        right: 20rpx;
+        color: #fff;
+      }
+      .totalpricetxt {
+        font: 700 32rpx/32rpx '';
+        margin-bottom: 10rpx;
+      }
+      .fee {
+        font: 22rpx/22rpx '';
+        color: #777;
+      }
+    }
+    .tosettle {
+      width: 240rpx;
+      font: 30rpx/120rpx '';
+      color: #fff;
+      text-align: center;
+      background-color: #cdcdcd;
+      .active {
+        background-color: #ff5050;
+      }
+    }
+  }
+  .specdetail {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 93;
+    .specdetailbox {
+      max-height: 1000rpx;
+      overflow-y: scroll;
+      padding: 30rpx;
+      box-sizing: border-box;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      .food {
+        display: flex;
+        position: relative;
+        .close {
+          position: absolute;
+          width: 48rpx;
+          height: 48rpx;
+          top: 0;
+          right: 0;
+          image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .food-l {
+          width: 160rpx;
+          height: 160rpx;
+          background-color: #eeeeee;
+          border-radius: 16rpx;
+          margin-right: 20rpx;
+          image {
+            width: 100%;
+            height: 100%;
+            border-radius: 16rpx;
+          }
+        }
+        .food-r {
+          width: 460rpx;
+          .name {
+            color: #282828;
+            font: 28rpx/28rpx '';
+          }
+          .des {
+            font: 22rpx/22rpx '';
+            color: #777;
+            margin: 22rpx 0;
+          }
+          .price {
+            color: #ff5050;
+            font: 32rpx/32rpx '';
+          }
+        }
+      }
+      .specbody {
+        padding: 60rpx 10rpx 220rpx;
+        .data {
+          margin-bottom: 50rpx;
+          overflow: hidden;
+          .data-t {
+            font: 26rpx/26rpx '';
+            color: #282828;
+            margin-bottom: 20rpx;
+          }
+          .data-b {
+            width: 120%;
+            .specdata {
+              display: inline-block;
+              margin: 0 19rpx 19rpx 0;
+              background-color: #fdf0f0;
+              border-radius: 16rpx;
+              width: 210rpx;
+              height: 56rpx;
+              text-align: center;
+              color: #282828;
+              font: 26rpx/56rpx '';
+            }
+            .active {
+              background-color: #ff5050;
+              color: #fff;
+            }
+          }
+        }
+      }
+      .selectend {
+        height: 220rpx;
+        position: absolute;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        padding-top: 50rpx;
+        box-sizing: border-box;
+        background: #fff;
+        .selectendbox {
+          width: 480rpx;
+          height: 120rpx;
+          background-color: #ff5050;
+          box-shadow: 0rpx 16rpx 24rpx 0rpx #ff9999;
+          border-radius: 16rpx;
+          margin: 0 auto;
+          font: 700 40rpx/120rpx '';
+          color: #fff;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+</style>
+<template>
+	<view class="Home">
+		<wxs src="../../utils/addhttp.wxs" module="tools" />
+		<scroll-view
+			scroll-y="{{isscroll}}"
+			style="height:{{oheight}}px"
+			bindscroll="scroll"
+		>
+			<view class="back">
+				<image src="{{menulist.placeImage?tools.isaddhttp(menulist.placeImage):loadurl}}" class="backimg" lazy-load="true"/>
+				<view class="my_order" @tap="tomyorder">{{lang.my_order}}</view>
+			</view>
+			<view class="shopname">{{menulist.placeName?menulist.placeName:""}}</view>
+			<view class="charge {{language=='en'?'english':''}}">
+				<view class="data The_service_fee"><text>{{lang.The_service_fee}}:</text><text>{{busiInfo.serviceChargePoint?busiInfo.serviceChargePoint+'%':'0%'}}</text>|</view>
+				<view class="data Tax_point"><text>{{lang.Tax_point}}:</text><text>{{busiInfo.taxationPoint?busiInfo.taxationPoint+'%':'0%'}}</text>|</view>
+				<view class="data"><text>{{lang.Business_Hours}}:</text><text>{{menulist.openHours?menulist.openHours:''}}</text></view>
+			</view>
+				<view class="main-l" style="height:{{leftHeight}}px">
+					<repeat for="{{menulist.classList}}" key="index" index="index" item="item">
+						<view class="data {{menuindex==index?'menuback':''}}" @tap="scrollright({{index}})">
+							<view class="data-c">{{item.className?item.className:""}}</view>
+							<view class="total" wx:if="{{item.typeAmount?true:false}}">{{item.typeAmount?item.typeAmount:""}}</view>
+						</view>
+					</repeat>
+				</view>
+				<view class="main-r">
+					<scroll-view
+						scroll-y
+						style="max-height:{{oheight}}px"
+						bindscroll="rightscroll"
+						scroll-top="{{scrollTop}}"
+					>
+					<repeat for="{{menulist.classList}}" key="index" index="index" item="item">
+						<view class="maindetail" id="menu{{index}}">
+							<view class="title">{{item.className?item.className:""}}</view>
+							<view class="mainbody">
+								<repeat for="{{item.foods}}" key="indexs" index="indexs" item="items">
+									<view class="data" @tap="todetail({{items}})">
+										<view class="data-l">
+											<image src="{{items.mainImg?tools.isaddhttp(items.mainImg):loadurl}}" lazy-load="true"/>
+										</view>
+										<view class="data-r">
+											<view class="name">{{items.menuName?items.menuName:""}}</view>
+											<view class="sold">{{lang.sold}}:{{items.sold?items.sold:0}}</view>
+											<view class="data-r-b">
+												<view class="price">
+													<view class="currency">{{items.currency?tools.currency(items.currency):""}}</view>
+													<view class="pricetxt">{{items.price?tools.thousandBitSeparator(items.price):""}}</view>
+												</view>
+												<view class="opera">
+													<view class="minus" wx:if="{{items.addCount?true:false}}" catchtap="minus({{items}})"><image src="../../img/minus.png"/></view>
+													<view class="num">{{items.addCount?items.addCount:""}}</view>
+													<view class="add" catchtap="add({{items}},{{indexs}},{{index}})"><image src="../../img/add.png"/></view>
+												</view>
+											</view>
+                      <view class='rmb' wx:if="{{isTakeOut != 'Y' && exchangeRate != 0}}">约合:￥{{items.cnyPrice}}</view>
+										</view>
+									</view>
+								</repeat>
+							</view>
+						</view>
+					</repeat>
+					</scroll-view>
+				</view>
+		</scroll-view>
+		<view class="deliverFee" wx:if="{{deliverFee!=0&&isTakeOut=='Y'}}">{{lang.other_Delivery}}:¥{{deliverFee}}</view>
+		<view class="settle">
+			<view class="img" @tap="showcast">
+				<image src="../../img/dishBoxC.png" wx:if="{{carNum>0?true:false}}"/>
+				<image wx:else src="../../img/dishBox.png"/>
+				<view class="totalnum" wx:if="{{carNum>0?true:false}}">{{carNum?carNum:0}}</view>
+			</view>
+			<view class="totalprice">
+				<view class='rmb' wx:if="{{isTakeOut != 'Y' && exchangeRate != 0}}">约合:￥{{tools.newTofixed((menuPrice + service)*exchangeRate,2)}}</view>
+				<view class="totalpricebox">
+					<view class="totalpricetxt">{{currencyN?tools.currency(currencyN):""}}{{menuPrice?tools.thousandBitSeparator(tools.newTofixed(menuPrice+service,2)):tools.newTofixed(0,2)}}</view>
+					<view class="fee">{{lang.service_charges_and_taxes}}{{currencyN?tools.currency(currencyN):""}}{{service?tools.thousandBitSeparator(tools.newTofixed(service,2)):tools.newTofixed(0,2)}}</view>
+				</view>
+			</view>
+			<view class="tosettle">
+				<view class="tosettle-r" wx:if="{{isdistance&&(isdistance!=1)&&(isTakeOut=='Y')}}">{{lang.Beyond_the_scope_of_distribution}}</view>
+				<view wx:else>
+					<view wx:if="{{!isBusinessHours}}">{{lang.Non_business_hours}}</view>
+					<view wx:else>
+						<view wx:if="{{leastMoney && leastMoney > menuPrice}}" @tap="getleft">{{lang.Full}}{{currency(currencyN)}} {{leastMoney}}{{lang.Distribution}}</view>
+						<view class="tosettle-l {{carNum>0?'active':''}}" wx:else @tap="toorder">{{lang.Place_the_order}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="kindsdetail" wx:if="{{isdetail}}" style="height:{{oheight}}px" @tap="closedetail">
+			<view class="detailbox" catchtap="returndetail">
+				<view class="title">
+					<view class="titletxt">{{lang.Details_of_dishes}}</view>
+					<view class="close" @tap="close"><image src="../../img/close.png"/></view>
+				</view>
+				<view class="detailbody">
+					<view class="data">
+						<view class="data-t">{{menudetail.menuName?menudetail.menuName:""}}</view>
+					</view>
+					<view class="data">
+						<view class="data-t">{{menudetail.currency?tools.currency(menudetail.currency):''}}{{menudetail.price?tools.thousandBitSeparator(tools.newTofixed(menudetail.price,2)):''}}<text wx:if="{{isTakeOut != 'Y' && exchangeRate != 0}}">(约合:￥{{menudetail.price?tools.newTofixed(menudetail.price*exchangeRate,2):''}})</text>{{(menudetail.specs && menudetail.specs.length > 0)?"+":""}}</view>
+					</view>
+					<view class="data">
+						<view class="data-t">{{lang.Food_is_introduced}}</view>
+						<view class="data-b description"><rich-text nodes="{{menudetail.description?menudetail.description:''}}"></rich-text></view>
+					</view>
+				</view>
+				<view class="detailfoot">
+					<view class="detailfoot-t">
+						<view class="sold">{{lang.sold}}:{{menudetail.sold?menudetail.sold:''}}</view>
+						<view class="opera">
+							<view class="minus" wx:if="{{menudetail.addCount?true:false}}" catchtap="minus({{menudetail}})"><image src="../../img/minus.png"/></view>
+							<view class="num">{{menudetail.addCount?menudetail.addCount:""}}</view>
+							<view class="add" catchtap="add({{menudetail}})"><image src="../../img/add.png"/></view>
+						</view>
+					</view>
+					<view class="detailfoot-b">
+						<view class="mainimg"><image src="{{menudetail.mainImg?tools.isaddhttp(menudetail.mainImg):loadurl}}" lazy-load="true"/></view>
+						<view class="chosen" @tap="close">{{lang.chosen}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="cast" wx:if="{{iscast}}" style="height:{{oheight}}px" @tap="closecast">
+			<view class="castbox">
+				<view class="castbox-c">
+					<view class="title">
+						<view class="titletxt">{{lang.The_selected_items}}</view>
+						<view class="clearcast" @tap="cleardata">{{lang.Emptying_shopping_cart}}</view>
+					</view>
+					<view class="castbody">
+						<repeat for="{{cartMenu}}" key="indexs" index="indexs" item="items">
+							<view class="data" wx:if="{{items.amount>0?true:false}}">
+								<view class="data-l">
+									<view class="name">{{items.menuName?items.menuName:""}}</view>
+									<view class="spec">
+										<view wx:if="{{items.specName?true:false}}">{{items.specName}} |</view>
+										<repeat for="{{items.extras?items.extras:''}}" key="index" index="index" item="item">
+											<view class="speckind">{{tools.splitString(item.values[0],1)}}<text wx:if="{{index!=items.extras.length-1?true:false}}">|</text></view>
+										</repeat>
+									</view>
+								</view>
+								<view class="data-c">
+									<view class="price">
+										<view class="currency">{{items.currency?tools.currency(items.currency):""}}</view>
+										<view class="pricetxt">{{items.price?tools.thousandBitSeparator(items.price):""}}</view>
+									</view>
+                  <view class="rmb" wx:if="{{isTakeOut != 'Y' && exchangeRate != 0}}">
+										<view class="pricetxt">(约合:￥{{items.price?tools.newTofixed(items.price*exchangeRate,2):""}})</view>
+									</view>
+								</view>
+								<view class="data-r">
+									<view class="opera">
+										<view class="minus" wx:if="{{items.amount?true:false}}" catchtap="minusjian({{items}},{{indexs}})"><image src="../../img/minus.png"/></view>
+										<view class="num">{{items.amount?items.amount:""}}</view>
+										<view class="add" catchtap="addjia({{items}},{{indexs}})"><image src="../../img/add.png"/></view>
+									</view>
+								</view>
+							</view>
+						</repeat>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="specdetail" wx:if="{{isspec}}" style="height:{{oheight}}px" @tap="closespec">
+			<view class="specdetailbox" catchtap="returnclose">
+				<view class="food">
+					<view class="food-l"><image src="{{specdetail.mainImg?tools.isaddhttp(specdetail.mainImg):loadurl}}" lazy-load="true"/></view>
+					<view class="food-r">
+						<view class="name">{{specdetail.menuName?specdetail.menuName:""}}</view>
+						<view class="des"><rich-text nodes="{{specdetail.description?specdetail.description:''}}"></rich-text></view>
+						<view class="price">{{specdetail.currency?tools.currency(specdetail.currency):''}}{{specprice?tools.newTofixed(specprice,2):''}}</view>
+					</view>
+					<view class="close" @tap="closespec"><image src="../../img/close.png"/></view>
+				</view>
+				<view class="specbody">
+					<view class="data" wx:if="{{specdetail.specs&&specdetail.specs.length>0}}">
+						<view class="data-t">{{lang.specifications}}</view>
+						<view class="data-b">
+							<repeat for="{{specdetail.specs}}" key="index" index="index" item="item">
+								<view class="specdata {{specindex==index?'active':''}}" @tap="selectspec({{item}},{{index}})">{{item.specName?item.specName:''}}</view>
+							</repeat>
+						</view>
+					</view>
+					<view class="extras" wx:if="{{specdetail.extras&&specdetail.extras.length>0}}">
+						<repeat for="{{specdetail.extras}}" key="index" index="index" item="item">
+							<view class="data">
+								<view class="data-t">{{item.key?item.key:""}}</view>
+								<view class="data-b" wx:if="{{item.values&&item.values.length>0}}">
+									<repeat for="{{item.values}}" key="indexs" index="indexs" item="items">
+										<view class="specdata {{(item.valindex==indexs&&item.val)?'active':''}}" @tap="selectextras({{item}},{{items}},{{index}},{{indexs}})">{{items?tools.splitString(items,1):''}}</view>
+									</repeat>
+								</view>
+							</view>
+						</repeat>
+					</view>
+				</view>
+				<view class="selectend">
+					<view class="selectendbox" @tap="selectfinished({{specdetail}})">{{lang.chosen}}</view>
+				</view>
+		  </view>
+		</view>
+	</view>
+</template>
+	
+<script>
+import wepy from 'wepy';
+import apifunc from '@/api/index.js';
+import { splitString, tohtml } from '@/utils/tool.js';
+export default class Home extends wepy.page {
+  data = {
+    placeId: '',
+    oheight: '',
+    tableId: '',
+    language: '',
+    menulist: {},
+    loadurl: '',
+    lang: '',
+    busiInfo: '',
+    scrollTop: '',
+    rpa: '',
+    menufixed: false,
+    isscroll: false,
+    top: '',
+    leftHeight: '',
+    menuindex: 0,
+    userid: '',
+    storeId: '',
+    isdetail: false,
+    iscast: false,
+    isspec: false,
+    specprice: '',
+    cartMenu: {},
+    menudetail: {},
+    storeStatus: '',
+    nowHours: '',
+    nowMinutes: '',
+    openHours: '',
+    isBusinessHours: true,
+    carNum: 0, //购物车总数量
+    currencyN: '', //货币符号
+    menuPrice: 0, //商品价格
+    service: 0, //服务费和税费
+    serviceCharge: 0, //服务费
+    tallage: 0, //税点
+    exchangeRate:0,//汇率
+    deliverFee: 0,
+    specdetail: {},
+    specindex: 0, //规格
+    extrasobj: '',
+    extraContent: '',
+    selectPropleNum: '',
+    isTakeOut: '',
+    isdistance: '',
+		bstop: 0,
+		leastMoney:0,
+  };
+  watch = {};
+  methods = {
+		getleft() {
+			let gapprice=(this.leastMoney-this.menuPrice).toFixed(2);
+			let that=this
+			wx.showToast({
+				title: that.lang.Also_need+gapprice+that.lang.Distribution,
+				icon: 'none',
+				duration: 1000
+			});
+		},
+    returndetail() {},
+    closedetail() {
+      this.isdetail = false;
+      this.isscroll = true;
+    },
+    tomyorder() {
+      wx.navigateTo({
+        url: `/pages/orderList/index`,
+        success: function() {},
+        fail: function() {},
+        complete: function() {}
+      });
+    },
+    toorder() {
+      var that = this;
+      if (this.carNum > 0) {
+				if(this.bstop == 0) {
+					wx.navigateTo({
+          url: `/pages/toorder/index?placeId=${that.placeId}&tableId=${
+            that.tableId
+          }&selectPropleNum=${that.selectPropleNum}&isTakeOut=${
+            that.isTakeOut
+          }`,
+          success: function() {},
+          fail: function() {},
+          complete: function() {}
+        });
+				}
+        
+      }
+    },
+    cleardata() {
+      var that = this;
+      this.isscroll = true;
+      this.bstop = 0;
+      var url =
+        '/tour/menuCart/clearCart?tableId=' +
+        this.tableId +
+        '&userId=' +
+        this.userid;
+      apifunc.cleardata(url, 'get', '').then(function(res) {
+        if (res.meta.success) {
+          that.iscast = false;
+          that.getCartMenu();
+          wx.showToast({
+            title: res.data,
+            icon: 'none',
+            duration: 1000
+          });
+        }
+        that.$apply();
+      });
+    },
+    selectfinished(specdetail) {
+      var that = this;
+      this.isscroll = true;
+      this.extraContent = [];
+      if (specdetail.extras && specdetail.extras.length > 0) {
+        this.extrasobj.forEach(function(item, index) {
+          if (item.values.length != 0) {
+            that.extraContent.push(item);
+          }
+        });
+        that.extraContent = JSON.stringify(that.extraContent);
+      } else {
+        this.extraContent = '';
+      }
+      if (specdetail.specs && specdetail.specs.length > 0) {
+        this.addcast(
+          specdetail.id,
+          specdetail.specs[this.specindex].id,
+          this.extraContent,
+          specdetail
+        );
+      } else {
+        this.addcast(specdetail.id, '', this.extraContent, specdetail);
+      }
+    },
+    selectextras(item, items, index, indexs) {
+      console.log(item, items, index, indexs);
+      var that = this;
+      var content;
+      var key;
+      if (!item.val || item.val == undefined) {
+        content = { key: item.key, values: [splitString(items, 0)] };
+        key = item.key;
+      } else {
+        key = item.key;
+        content = { key: item.key, values: [] };
+      }
+      if (item.valindex == indexs) {
+        if (item.val == '' || !item.val || item.val == undefined) {
+          this.specdetail.extras[index].val = true;
+        } else {
+          this.specdetail.extras[index].val = false;
+        }
+      } else {
+        this.specdetail.extras[index].val = true;
+      }
+      this.specdetail.extras[index].valindex = indexs;
+      this.extrasobj.set(key, content);
+      this.setData({
+        specdetail: that.specdetail
+      });
+    },
+    selectspec(item, index) {
+      this.specindex = index;
+      this.specprice = item.price;
+    },
+    returnclose() {},
+    closespec() {
+      this.bstop = 0;
+      this.isspec = false;
+      this.isscroll = true;
+    },
+    closecast() {
+      this.bstop = 0;
+      this.iscast = false;
+      this.isscroll = true;
+    },
+    addjia(items, indexs) {
+      if (this.bstop == 0) {
+        var that = this;
+        this.bstop = 1;
+        this.extraContent = '';
+        this.extrasobj = new Map();
+        that.cartMenu[indexs].amount++;
+        var specId;
+        if (items.specId) {
+          specId = items.specId;
+        } else {
+          specId = '';
+        }
+        if (items.extras && items.extras.length != 0) {
+          for (var i = 0; i <= items.extras.length - 1; i++) {
+            if (items.extras[i].key && items.extras[i].values.length != 0) {
+              console.log(items.extras[i]);
+              var content = {
+                key: items.extras[i].key,
+                values: [splitString(items.extras[i].values[0], 0)]
+              };
+              this.extrasobj.set(items.extras[i].key, content);
+            }
+          }
+          that.extraContent = [];
+          this.extrasobj.forEach(function(item, index) {
+            if (item.values) {
+              that.extraContent.push(item);
+            }
+          });
+          that.extraContent = JSON.stringify(that.extraContent);
+        } else {
+          this.extraContent = '';
+        }
+        that.specprice = items.price;
+        this.addcast(
+          items.menuId,
+          specId,
+          this.extraContent,
+          items,
+          'fromcast'
+        );
+      }
+    },
+    minusjian(items, indexs) {
+      if (this.bstop == 0) {
+        this.bstop = 1;
+        var that = this;
+        this.extraContent = '';
+        this.extrasobj = new Map();
+        that.cartMenu[indexs].amount--;
+        var specId;
+        if (items.specId) {
+          specId = items.specId;
+        } else {
+          specId = '';
+        }
+        if (items.extras && items.extras.length != 0) {
+          for (var i = 0; i <= items.extras.length - 1; i++) {
+            if (items.extras[i].key && items.extras[i].values.length != 0) {
+              console.log(items.extras[i]);
+              var content = {
+                key: items.extras[i].key,
+                values: [splitString(items.extras[i].values[0], 0)]
+              };
+              this.extrasobj.set(items.extras[i].key, content);
+            }
+          }
+          that.extraContent = [];
+          this.extrasobj.forEach(function(item, index) {
+            if (item.values) {
+              that.extraContent.push(item);
+            }
+          });
+          that.extraContent = JSON.stringify(that.extraContent);
+        } else {
+          this.extraContent = '';
+        }
+        that.specprice = items.price;
+        this.minuscat(
+          items.menuId,
+          specId,
+          this.extraContent,
+          items,
+          'fromcast'
+        );
+      }
+    },
+    showcast() {
+      if (this.carNum > 0) {
+        this.iscast = !this.iscast;
+        if (this.iscast) {
+          this.isscroll = false;
+        } else {
+          this.isscroll = true;
+        }
+        if (this.iscast) {
+          this.getCartMenu();
+        }
+      }
+    },
+    minus(items) {
+      if (this.bstop == 0) {
+        this.bstop = 1;
+        this.isdetail = false;
+        this.isspec = false;
+        if (
+          (items.specs && items.specs.length != 0) ||
+          (items.extras && items.extras.length != 0)
+        ) {
+          this.cartMenu = {};
+          this.getCartMenu();
+          this.iscast = true;
+          this.bstop = 0;
+          this.isspec = false;
+          this.isscroll = true;
+        } else {
+          this.specprice = items.price;
+          this.extraContent = '';
+          this.isscroll = true;
+          this.minuscat(items.id, '', this.extraContent, items);
+        }
+      }
+    },
+    add(items, indexs, index) {
+      if (this.bstop == 0) {
+        this.bstop = 1;
+        this.extrasobj = new Map();
+        this.specindex = 0;
+        this.isdetail = false;
+        this.iscast = false;
+        this.specdetail = items;
+        this.specdetail.description = tohtml(this.specdetail.description);
+        if (
+          (items.specs && items.specs.length != 0) ||
+          (items.extras && items.extras.length != 0)
+        ) {
+          this.isspec = true;
+          this.isscroll = true;
+          if (items.specs && items.specs.length != 0) {
+            this.specprice = items.specs[0].price;
+          } else {
+            this.specprice = items.price;
+          }
+        } else {
+          this.isscroll = true;
+          this.specprice = items.price;
+          this.extraContent = '';
+          this.addcast(items.id, '', this.extraContent, items);
+        }
+      }
+    },
+    todetail(items) {
+      this.menudetail = items;
+      this.menudetail.description = tohtml(this.menudetail.description);
+      this.isdetail = true;
+      this.isscroll = false;
+    },
+    close() {
+      this.isdetail = false;
+      this.isscroll = true;
+    },
+    scrollright(index) {
+      console.log(index)
+      var that = this;
+      if (that.menulist) {
+        if (that.menulist.classList) {
+          if (index > 0) {
+            if (
+              that.menulist.classList[index - 1] &&
+              that.menulist.classList[index - 1].itemslength
+            ) {
+              this.scrollTop =
+                that.menulist.classList[index - 1].itemslength + 'px';
+              return;
+            }
+          } else {
+            this.scrollTop = 0;
+            return;
+          }
+        }
+      }
+    },
+    rightscroll(event) {
+      var that = this;
+      if (that.menulist) {
+        if (that.menulist.classList) {
+          for (var i = 0; i <= that.menulist.classList.length - 1; i++) {
+            if (i >= 1) {
+              if (
+                event.detail.scrollTop >=
+                  that.menulist.classList[i - 1].itemslength &&
+                event.detail.scrollTop <that.menulist.classList[i].itemslength
+              ) {
+                that.menuindex = i+1;
+              }
+            } else {
+              that.menuindex = 0;
+            }
+          }
+        }
+      }
+      this.$apply();
+    },
+    scroll(event) {
+      var that = this;
+      console.log(event.detail.scrollTop);
+    }
+  };
+  minuscat(menuId, specId, extraContent, specdetail, fromdata) {
+    var that = this;
+    var url = '/tour/menuCart/delCart';
+    var data = {
+      storeId: this.storeId,
+      tableId: this.tableId,
+      menuId: menuId,
+      specId: specId,
+      amount: 1,
+      userId: this.userid,
+      extraContent: extraContent
+    };
+    apifunc.minuscat(url, 'post', data).then(function(res) {
+      that.bstop = 0;
+      that.isspec = false;
+      if (res.meta.success) {
+        that.carNum--;
+        that.menuPrice -= that.specprice;
+        //服务费
+        that.serviceCharge = (
+          that.menuPrice *
+          that.busiInfo.serviceChargePoint /
+          100
+        ).toFixed(2);
+        //税点
+        that.tallage = (
+          that.menuPrice *
+          that.busiInfo.taxationPoint /
+          100
+        ).toFixed(2);
+        that.service = Number(that.serviceCharge) + Number(that.tallage);
+        if (that.menulist.classList) {
+          for (var i = 0; i <= that.menulist.classList.length - 1; i++) {
+            if (specdetail.classId == that.menulist.classList[i].id) {
+              that.menulist.classList[i].typeAmount--;
+              break;
+            }
+          }
+          if (fromdata == 'fromcast') {
+            for (var i = 0; i <= that.menulist.classList.length - 1; i++) {
+              if (specdetail.classId == that.menulist.classList[i].id) {
+                if (that.menulist.classList[i].foods) {
+                  for (
+                    var j = 0;
+                    j <= that.menulist.classList[i].foods.length - 1;
+                    j++
+                  ) {
+                    if (
+                      specdetail.menuId ==
+                      that.menulist.classList[i].foods[j].id
+                    ) {
+                      that.menulist.classList[i].foods[j].addCount--;
+                      break;
+                    }
+                  }
+                }
+              }
+            }
+          } else {
+            for (var i = 0; i <= that.menulist.classList.length - 1; i++) {
+              if (specdetail.classId == that.menulist.classList[i].id) {
+                if (that.menulist.classList[i].foods) {
+                  for (
+                    var j = 0;
+                    j <= that.menulist.classList[i].foods.length - 1;
+                    j++
+                  ) {
+                    if (
+                      specdetail.id == that.menulist.classList[i].foods[j].id
+                    ) {
+                      that.menulist.classList[i].foods[j].addCount--;
+                      break;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        that.setData({
+          menulist: that.menulist
+        });
+        wx.showToast({
+          title: res.data,
+          icon: 'none',
+          duration: 1000
+        });
+      }
+      that.$apply();
+    });
+  }
+  addcast(menuId, specId, extraContent, specdetail, fromdata) {
+    var that = this;
+    var url = '/tour/menuCart/addCart';
+    var data = {
+      storeId: this.storeId,
+      tableId: this.tableId,
+      menuId: menuId,
+      specId: specId,
+      amount: 1,
+      userId: this.userid,
+      extraContent: extraContent
+    };
+    apifunc.addcast(url, 'post', data).then(function(res) {
+      that.bstop = 0;
+      that.isspec = false;
+      if (res.meta.success) {
+        that.carNum++;
+        that.menuPrice += that.specprice;
+        //服务费
+        that.serviceCharge = (
+          that.menuPrice *
+          that.busiInfo.serviceChargePoint /
+          100
+        ).toFixed(2);
+        //税点
+        that.tallage = (
+          that.menuPrice *
+          that.busiInfo.taxationPoint /
+          100
+        ).toFixed(2);
+        that.service = Number(that.serviceCharge) + Number(that.tallage);
+        if (that.menulist.classList) {
+          for (var i = 0; i <= that.menulist.classList.length - 1; i++) {
+            if (specdetail.classId == that.menulist.classList[i].id) {
+              that.menulist.classList[i].typeAmount++;
+              break;
+            }
+          }
+          if (fromdata == 'fromcast') {
+            for (var i = 0; i <= that.menulist.classList.length - 1; i++) {
+              if (specdetail.classId == that.menulist.classList[i].id) {
+                if (that.menulist.classList[i].foods) {
+                  for (
+                    var j = 0;
+                    j <= that.menulist.classList[i].foods.length - 1;
+                    j++
+                  ) {
+                    if (
+                      specdetail.menuId ==
+                      that.menulist.classList[i].foods[j].id
+                    ) {
+                      that.menulist.classList[i].foods[j].addCount++;
+                      break;
+                    }
+                  }
+                }
+              }
+            }
+          } else {
+            for (var i = 0; i <= that.menulist.classList.length - 1; i++) {
+              if (specdetail.classId == that.menulist.classList[i].id) {
+                if (that.menulist.classList[i].foods) {
+                  for (
+                    var j = 0;
+                    j <= that.menulist.classList[i].foods.length - 1;
+                    j++
+                  ) {
+                    if (
+                      specdetail.id == that.menulist.classList[i].foods[j].id
+                    ) {
+                      that.menulist.classList[i].foods[j].addCount++;
+                      break;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        that.setData({
+          menulist: that.menulist
+        });
+        wx.showToast({
+          title: res.data,
+          icon: 'none',
+          duration: 1000
+        });
+      }
+      that.$apply();
+    });
+  }
+  //菜单分类
+  getMenuType() {
+    var that = this;
+    if (this.tableId) {
+      var url =
+        '/tour/goodsMenu/scan/' + this.tableId + '?lang=' + this.language;
+      apifunc.getMenuType(url, 'get', '').then(function(res) {
+        if (res.meta.success) {
+          that.menulist = res.data;
+          that.storeId = that.menulist.placeId;
+          that.isTakeOut = res.data.isTakeOut;
+          wx.setStorageSync('storeId', that.storeId);
+          that.isscroll = true;
+          if (
+            res.data.classList &&
+            res.data.classList.length > 0 &&
+            res.data.classList[0].foods &&
+            res.data.classList[0].foods.length > 0
+          ) {
+            that.currencyN = res.data.classList[0].foods[0].currency;
+            wx.setStorageSync('currencyN', that.currencyN);
+          }
+          that.openHours = res.data.openHours;
+          var hourList = that.openHours.split('-');
+          if (hourList && hourList.length == 2) {
+            var min = hourList[0].split(':');
+            var max = hourList[1].split(':');
+            var minH = Number(min[0]);
+            var maxH = Number(max[0]);
+            var maxM = Number(max[1]);
+            if (
+              that.storeStatus == 1 &&
+              ((that.nowHours >= minH && that.nowHours < maxH) ||
+                (that.nowHours == maxH && that.nowMinutes <= maxM))
+            ) {
+              that.isBusinessHours = true;
+            } else {
+              that.isBusinessHours = false;
+            }
+          }
+          if (that.menulist.classList) {
+            var menulength = that.menulist.classList.length;
+            for (var i = 0; i <= menulength - 1; i++) {
+              if (that.menulist.classList[i]) {
+                if (that.menulist.classList[i].foods) {
+                  if (that.menulist.classList[i].foods.length != 0) {
+                    that.menulist.classList[i].itemslength =
+                      that.menulist.classList[i].foods.length * 110 * that.rpa +
+                      17 * that.rpa;
+                  }
+                } else {
+                  that.menulist.classList[i].itemslength = 0;
+                }
+              }
+            }
+            for (var j = 0; j <= menulength - 1; j++) {
+              if (j >= 1) {
+                that.menulist.classList[j].itemslength +=
+                  that.menulist.classList[j - 1].itemslength;
+              }
+            }
+          }
+          if (that.menulist.restaurantConfig) {
+            that.busiInfo = that.menulist.restaurantConfig;
+            if (that.busiInfo.deliverFee) {
+              that.deliverFee = that.busiInfo.deliverFee;
+            } else {
+              that.deliverFee = 0;
+						}
+						if(that.busiInfo.leastMoney) {
+							that.leastMoney=that.busiInfo.leastMoney;
+						} else {
+							that.leastMoney=0;
+						}
+          }
+          wx.setStorageSync('busiInfo', JSON.stringify(that.busiInfo));
+          that.getCartMenu();
+        } else {
+        }
+        that.$apply();
+      });
+    }
+  }
+  //购物车
+  getCartMenu() {
+    var that = this;
+    if (this.tableId && this.userid) {
+      var url =
+        '/tour/menuCart/list?tableId=' +
+        this.tableId +
+        '&lang=' +
+        this.language +
+        '&userId=' +
+        this.userid;
+      apifunc.getCartMenu(url, 'get', '').then(function(res) {
+        if (res.meta.success) {
+          that.menuPrice = 0;
+          that.serviceCharge = 0;
+          that.tallage = 0;
+          that.service = 0;
+          that.carNum = 0;
+          that.cartMenu = res.list;
+          var num = 0;
+          var total = 0;
+          that.carNum = that.cartMenu.length;
+          that.cartMenu.forEach(function(items, indexs) {
+            total += Number(items.price) * Number(items.amount);
+            num += Number(items.amount);
+          });
+          that.menuPrice = total;
+          that.carNum = num;
+          //服务费
+          if (that.busiInfo.serviceChargePoint) {
+            that.serviceCharge = (
+              that.menuPrice *
+              that.busiInfo.serviceChargePoint /
+              100
+            ).toFixed(2);
+          }
+          //税点
+          if (that.busiInfo.taxationPoint) {
+            that.tallage = (
+              that.menuPrice *
+              that.busiInfo.taxationPoint /
+              100
+            ).toFixed(2);
+          }
+          that.service = Number(that.serviceCharge) + Number(that.tallage);
+          //购物车总数量
+          for (var i = 0; i <= that.menulist.classList.length - 1; i++) {
+            var typeAmount = 0;
+            for (var j = 0; j <= that.cartMenu.length - 1; j++) {
+              if (that.cartMenu[j].classId == that.menulist.classList[i].id) {
+                typeAmount += Number(that.cartMenu[j].amount);
+              }
+            }
+            that.menulist.classList[i].typeAmount = typeAmount;
+            if (that.menulist.classList[i].foods) {
+              for (
+                var m = 0;
+                m <= that.menulist.classList[i].foods.length - 1;
+                m++
+              ) {
+                var amount = 0;
+                for (var n = 0; n <= that.cartMenu.length - 1; n++) {
+                  if (
+                    that.cartMenu[n].menuId ==
+                    that.menulist.classList[i].foods[m].id
+                  ) {
+                    amount += Number(that.cartMenu[n].amount);
+                  }
+                }
+                that.menulist.classList[i].foods[m].addCount = amount;
+                that.setData({
+									menulist: that.menulist,
+									menuPrice:that.menuPrice,
+									carNum:that.carNum
+                });
+              }
+            }
+          }
+          // that.menulist.classList.forEach(function(item, index) {
+          //   var typeAmount = 0;
+          //   that.cartMenu.forEach(function(items, indexs) {
+          //     if (items.classId == item.id) {
+          //       typeAmount += Number(items.amount);
+          //     }
+          //   });
+          //   item.typeAmount = typeAmount;
+          //   if (item.foods) {
+          //     item.foods.forEach(function(e, i) {
+          //       var amount = 0;
+          //       that.cartMenu.forEach(function(exe, inx) {
+          //         if (exe.menuId == e.id) {
+          //           amount += Number(exe.amount);
+          //         }
+          //       });
+          //       e.addCount = amount;
+          //     });
+          //   }
+          // });
+          that.$apply();
+        }
+      });
+    }
+  }
+  onShow() {
+    let self = this;
+    this.menufixed = false;
+    this.isscroll = false;
+    this.isdetail = false;
+    this.iscast = false;
+    this.isspec = false;
+    this.menuindex = 0;
+    this.isTakeOut = '';
+    this.specprice = '';
+		this.specindex = 0;
+		this.leastMoney=0;
+    this.carNum = 0;
+    this.bstop = 0;
+    this.menuPrice = 0; //商品价格
+    this.service = 0; //服务费和税费
+    this.serviceCharge = 0; //服务费
+    this.deliverFee = 0;
+    this.tallage = 0;
+    this.busiInfo = '';
+    this.menulist = {};
+    this.cartMenu = {};
+    this.specdetail = {};
+    this.openHours = '';
+    this.scrollTop = '';
+    this.extrasobj = new Map();
+    this.top = '';
+    this.isBusinessHours = true;
+    this.loadurl = this.$parent.globalData.loadurl;
+    this.language = this.$parent.globalData.langtxt;
+		this.lang = this.$parent.globalData.language;
+    let res = wx.getSystemInfoSync();
+    this.oheight = res.windowHeight;
+    this.rpa = res.windowWidth / 375;
+    this.leftHeight = res.windowHeight;
+    this.top = 50 * this.rpa;
+    let myDate = new Date();
+    this.nowHours = myDate.getHours();
+    this.nowMinutes = myDate.getMinutes();
+    if (wx.getStorageSync('userid')) {
+      this.userid = wx.getStorageSync('userid');
+		}
+    if (wx.getStorageSync('storeStatus')) {
+      this.storeStatus = wx.getStorageSync('storeStatus');
+    }
+    if (wx.getStorageSync('exchangeRate')) {
+      this.exchangeRate = wx.getStorageSync('exchangeRate');
+    }
+    this.getMenuType();
+    this.$apply();
+  }
+  onLoad(options) {
+    console.log(options);
+    if (options && options.tableId) {
+      this.tableId = options.tableId;
+    } else {
+      this.tableId = '';
+    }
+    if (options && options.selectPropleNum) {
+      this.selectPropleNum = options.selectPropleNum;
+    } else {
+      this.selectPropleNum = '';
+    }
+    if (options && options.placeId) {
+      this.placeId = options.placeId;
+    } else {
+      this.placeId = '';
+    }
+    if (options && options.isdistance) {
+      this.isdistance = options.isdistance;
+    } else {
+      this.isdistance = '';
+    }
+    this.$apply();
+  }
+}
+</script>

@@ -1,0 +1,29 @@
+var baseImg = {
+  numberToFix: function (value) {
+  	if(value.indexOf("http") > -1){
+		return true;
+	}else{
+		return false;
+	}
+  }
+}
+var currency = {
+	numberToFix: function (value) {
+		if(value != null || value){
+			value = value.replace('HKD', 'HK$')   //港币
+				.replace('JPY', '￥')   //日元
+				.replace('KRW', '₩')   //韩元
+				.replace('MYR', 'RM')  //林吉特
+				.replace('IDR', 'Rp')  //印尼盾
+				.replace('VND', '₫')   //越南盾
+				.replace('THB', '฿')   //泰铢
+				.replace('CNY', '¥')   //人民币
+		}
+		return value;
+	}
+}
+module.exports = {
+  currency: currency.numberToFix,
+  baseImg: baseImg.numberToFix
+}
+

@@ -1,0 +1,274 @@
+<style lang="less">
+.order_list {
+  background: #f2f2f2;
+  min-height: 100vh;
+  height: auto;
+  font-family: SourceHanSansCN-Regular;
+  .head {
+    width: 100%;
+    height: 240rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    .head_img {
+      width: 100%;
+      height: 112rpx;
+    }
+    .head_text {
+      line-height: 100rpx;
+      text-align: center;
+      border-radius: 8rpx 8rpx 0 0;
+      position: absolute;
+      bottom: -1rpx;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      background: #ffffff;
+      .text {
+        font-size: 32rpx;
+        color: #282828;
+        font-weight: bold;
+      }
+      .line {
+        width: 40rpx;
+        height: 10rpx;
+        background-color: #ff6666;
+        margin: 0 auto;
+      }
+    }
+  }
+  .content {
+    padding: 30rpx;
+    padding-top: 270rpx;
+    .content_list {
+      .item {
+        border-radius: 8rpx;
+        background: #fff;
+        margin-bottom: 30rpx;
+        .order_no {
+          line-height: 64rpx;
+          padding-left: 30rpx;
+          border-bottom: 1rpx solid #eee;
+          font-size: 24rpx;
+          color: #999;
+        }
+        .order_info {
+          padding: 29rpx 20rpx 28rpx 30rpx;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .left {
+            font-size: 34rpx;
+            color: #282828;
+            flex: 1;
+            .text_1 {
+              font-weight: bold;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 1;
+              overflow: hidden;
+            }
+            .text_2 {
+              font-size: 28rpx;
+			  margin-top: 10rpx;
+			  .rmb {
+				  font: 22rpx/22rpx "";
+				  color: #999;
+			  }
+            }
+          }
+          .right {
+            width: 124rpx;
+            line-height: 26rpx;
+            padding: 11rpx;
+            text-align: center;
+            border-radius: 24rpx;
+            font-size: 26rpx;
+            background-color: #79ca5a;
+            color: #fff;
+          }
+          .unsure {
+            background-color: #ff5050;
+          }
+          .sureed {
+            background-color: #fc914a;
+          }
+        }
+        .order_time {
+          border-top: 1px solid #eee;
+          line-height: 64rpx;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 24rpx;
+          color: #999;
+          padding-left: 30rpx;
+          padding-right: 30rpx;
+        }
+      }
+      .no_data_img {
+        text-align: center;
+        margin-top: 200rpx;
+        image {
+          width: 100rpx;
+          height: 122rpx;
+        }
+        view {
+          font-size: 28rpx;
+          color: #999;
+          margin: 20rpx;
+        }
+      }
+    }
+    .load {
+      text-align: center;
+      margin-top: 200rpx;
+      .load_img {
+        width: 128rpx;
+        height: 128rpx;
+      }
+    }
+  }
+}
+</style>
+<template>
+  <view class="order_list">
+    <wxs module="tools" src="../../utils/addhttp.wxs"></wxs>
+    <view class="head">
+      <image class="head_img" mode="widthFix" src="../../img/orderlistback.jpg"/>
+      <view class="head_text">
+        <view class="text">{{lanage.my_order}}</view>
+        <view class="line"></view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="content_list">
+        <view wx:if="{{orderList}}">
+          <block wx:for="{{orderList}}" wx:key="{{item}}">
+            <view class="item" @tap="toOrderDetial({{item.orderNo}})">
+              <view class="order_no">{{lanage.ordertxt}} : {{item.orderNo}}</view>
+              <view class="order_info">
+                <view class="left">
+                  <view class="text_1">{{item.placeInfo.name}}</view>
+                  <view class="text_2">
+                    {{lanage.total}} : {{tools.currency(item.currency)}}{{tools.thousandBitSeparator(item.orderTotalPrice)}}
+                    <text
+                      class="rmb"
+                      wx:if="{{item.orderType == 1 && exchangeRate != 0}}"
+                    >(约合:￥{{tools.newTofixed((item.orderTotalPrice)*exchangeRate,2)}})</text>
+                  </view>
+                </view>
+                <view class="right unsure" wx:if="{{item.orderStatus==0}}">{{lanage.unsure}}</view>
+                <view class="right sureed" wx:if="{{item.orderStatus==1}}">{{lanage.payed}}</view>
+                <view class="right sureed" wx:if="{{item.orderStatus==2}}">{{lanage.sureed}}</view>
+                <view class="right unsure" wx:if="{{item.orderStatus==5}}">{{lanage.drawbacked}}</view>
+                <view class="right sureed" wx:if="{{item.orderStatus==6}}">{{lanage.closed}}</view>
+                <view class="right" wx:if="{{item.orderStatus==8}}">{{lanage.finished}}</view>
+              </view>
+              <view class="order_time">
+                <view class="left">{{item.orderDate}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="no_data_img" wx:else>
+          <image mode="widthFix" src="../../img/infoNull@2x.png"/>
+          <view>{{lanage.no_data}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy';
+import request from '@/utils/request.js';
+import apifunc from '@/api/index.js';
+import { imgBaseUrl } from '@/utils/env.js';
+export default class orderList extends wepy.page {
+  data = {
+    lang: '',
+    orderList: [],
+    lanage: '',
+    buyerId: '',
+    pageNo: 1,
+    pageSize: 10,
+    loadmore: false,
+    exchangeRate: 0
+  };
+  methods = {
+    toOrderDetial(orderNo) {
+      var _this = this;
+      if (orderNo) {
+        wx.navigateTo({
+          url: '/pages/orderDetail/index?orderNo=' + orderNo,
+          success: function() {},
+          fail: function() {},
+          complete: function() {}
+        });
+        _this.$apply();
+      }
+    }
+  };
+  orderlist() {
+    var that = this;
+    apifunc
+      .getOrderList(
+        `/tour/menuOrder/page?lang=${that.lang}&buyerId=${
+          that.buyerId
+        }&pageNo=${that.pageNo}&pageSize=${that.pageSize}`,
+        'get',
+        ''
+      )
+      .then(function(res) {
+        if (res.meta.success) {
+          var listdata = res.list;
+          listdata.forEach((order, i) => {
+            that.orderList.push(order);
+          });
+          if (listdata.length < that.pageSize) {
+            that.loadmore = true;
+          } else {
+            that.pageNo++;
+          }
+          if (
+            (that.orderList && that.orderList.length == 0) ||
+            !that.orderList
+          ) {
+            that.loadmore = true;
+          }
+        } else {
+          wx.showToast({
+            title: res.meta.message,
+            icon: 'none',
+            duration: 1000
+          });
+        }
+        that.$apply();
+      });
+  }
+  onReachBottom() {
+    var that = this;
+    if (!this.loadmore) {
+      that.loadmore = true;
+      that.orderlist();
+    }
+  }
+  onShow() {}
+  onLoad(options) {
+    if (wx.getStorageSync('userid')) {
+      this.buyerId = wx.getStorageSync('userid');
+    }
+    this.orderList = [];
+    if (wx.getStorageSync('exchangeRate')) {
+      this.exchangeRate = wx.getStorageSync('exchangeRate');
+    }
+    this.lanage = this.$parent.globalData.language;
+    this.lang = this.$parent.globalData.langtxt;
+    this.orderlist();
+    this.$apply();
+  }
+}
+</script>
+	

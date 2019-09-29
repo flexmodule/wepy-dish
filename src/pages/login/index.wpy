@@ -1,0 +1,424 @@
+<style lang="less">
+page {
+  width: 100%;
+  height: 100%;
+}
+@keyframes identifier {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.login {
+  width: 100%;
+  height: 100%;
+  .back {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .restitle {
+    padding: 181rpx 0 21rpx;
+    text-align: center;
+    font: 700 40rpx/40rpx '';
+  }
+  .block {
+    width: 440rpx;
+    height: 1rpx;
+    background-color: #cdcdcd;
+    margin: 0 auto;
+  }
+  .selectpeople {
+    color: #444;
+    font: 32rpx/32rpx '';
+    text-align: center;
+    margin: 60rpx auto;
+  }
+  .num {
+    .top,
+    .center,
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30rpx;
+      padding: 0 50rpx;
+      .data {
+        width: 140rpx;
+        height: 140rpx;
+        background-color: #ffffff;
+        border-radius: 16rpx;
+        border: solid 1rpx #cdcdcd;
+        font: 56rpx/140rpx '';
+        text-align: center;
+        color: #282828;
+      }
+      .select_num {
+        width: 140rpx;
+        height: 140rpx;
+        background-color: #ff5050;
+        box-shadow: 0rpx 16rpx 24rpx 0rpx #ff9999;
+        color: #fff;
+        border: 1rpx solid #ff5050;
+        animation: identifier 0.2s infinite;
+        animation-iteration-count: 1;
+        -webkit-animation: identifier 0.2s infinite;
+        -webkit-animation-iteration-count: 1;
+        -moz-animation: identifier 0.2s infinite;
+        -moz-animation-iteration-count: 1;
+        -o-animation: identifier 0.2s infinite;
+        -o-animation-iteration-count: 1;
+        -ms-animation: identifier 0.2s infinite;
+        -ms-animation-iteration-count: 1;
+      }
+    }
+  }
+  .sure {
+    width: 480rpx;
+    height: 120rpx;
+    background-color: #ff5050;
+    box-shadow: 0rpx 16rpx 24rpx 0rpx #ff9999;
+    border-radius: 16rpx;
+    margin: 100rpx auto;
+    font: 700 40rpx/120rpx '';
+    color: #fff;
+    text-align: center;
+  }
+  .authshadow {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+  }
+  .locationshadow {
+    z-index: 100;
+  }
+  .alertbox {
+    width: 590rpx;
+    height: 480rpx;
+    border-radius: 8rpx;
+    background: #fff;
+    padding: 39rpx;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    .wechat {
+      font: 36rpx/36rpx '';
+    }
+    .apply {
+      margin: 53rpx 0 62rpx;
+      display: flex;
+      image {
+        width: 96rpx;
+        height: 96rpx;
+        margin-right: 19rpx;
+      }
+      .applytxt {
+        font: 26rpx/90rpx '';
+      }
+    }
+    .applyList {
+      font: 26rpx/26rpx '';
+      color: #999;
+      margin-bottom: 84rpx;
+    }
+    .authBtn {
+      text-align: right;
+      button {
+        display: inline-block;
+        font: 32rpx/32rpx '';
+        color: #41cf8e;
+        border: 0;
+        background: 0;
+        &:after {
+          content: '';
+          border: 0;
+        }
+      }
+    }
+  }
+}
+</style>
+<template>
+  <view class="login">
+		<view class="back"><image src="../../img/bg.jpg"/></view>
+		<view class="restitle">{{storeName}}</view>
+		<view class="block"></view>
+		<view class="selectpeople">{{lang.Please_select_the_number_of_participants}}</view>
+		<view class="num">
+			<view class="top">
+				<view class="data {{(selectIndex == 1)?'select_num':''}}" @tap="getVal(1)">1</view>
+				<view class="data {{(selectIndex == 2)?'select_num':''}}" @tap="getVal(2)">2</view>
+				<view class="data {{(selectIndex == 3)?'select_num':''}}" @tap="getVal(3)">3</view>
+				<view class="data {{(selectIndex == 4)?'select_num':''}}" @tap="getVal(4)">4</view>
+			</view>
+			<view class="center">
+				<view class="data {{(selectIndex == 5)?'select_num':''}}" @tap="getVal(5)">5</view>
+				<view class="data {{(selectIndex == 6)?'select_num':''}}" @tap="getVal(6)">6</view>
+				<view class="data {{(selectIndex == 7)?'select_num':''}}" @tap="getVal(7)">7</view>
+				<view class="data {{(selectIndex == 8)?'select_num':''}}" @tap="getVal(8)">8</view>
+			</view>
+			<view class="bottom">
+				<view class="data {{(selectIndex == 9)?'select_num':''}}" @tap="getVal(9)">9</view>
+				<view class="data {{(selectIndex == 10)?'select_num':''}}" @tap="getVal(10)">10</view>
+				<view class="data {{(selectIndex == 11)?'select_num':''}}" @tap="getVal(11)">11</view>
+				<view class="data {{(selectIndex == 12)?'select_num':''}}" @tap="getVal(12)">12</view>
+			</view>
+		</view>
+		<view class="sure" @tap="toMenuIndex">{{lang.to_order}}</view>
+		<view class="authshadow" wx:if="{{getAuth}}" style="height:{{oheight}}px">  
+      <view class="alertbox">
+        <view class="wechat">微信授权</view>
+        <view class="apply">
+          <image src="../../img/wechat.png"/>
+          <view class="applytxt">汇享巴厘岛申请获取以下权限</view>
+        </view>
+        <view class="applyList">获取你的公开信息(昵称、头像等)</view>
+        <view class="authBtn">
+          <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">允许</button>
+          <view wx:else>请升级微信版本</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy';
+import apifunc from '@/api/index.js';
+import { imgBaseUrl } from '@/utils/env.js';
+export default class Login extends wepy.page {
+  data = {
+    locationAuth: false,
+    locationcanIUse: wx.canIUse('button.open-type.openSetting'),
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    getAuth: false,
+    lang: '',
+    oheight: '',
+    tableId: '',
+    placeId: '',
+    storeName: '',
+    storeStatus: '',
+		selectIndex: 1,
+		isdistance:"",
+		area:""
+  };
+
+  methods = {
+    getVal(data) {
+      this.selectIndex = data;
+    },
+    toMenuIndex() {
+      var that = this;
+      if (this.tableId) {
+        wx.navigateTo({
+          url: `/pages/menuIndex/index?placeId=${that.placeId}&tableId=${
+            that.tableId
+          }&selectPropleNum=${that.selectIndex}&isdistance=${that.isdistance}`,
+          success: function() {},
+          fail: function() {},
+          complete: function() {}
+        });
+      } else {
+        wx.showToast({
+          title: that.lang.restaurant_not_support_takeout,
+          icon: 'none',
+          duration: 1500
+        });
+        setTimeout(function() {
+          wx.redirectTo({
+            url: `/pages/home/index`,
+            success: function() {},
+            fail: function() {},
+            complete: function() {}
+          });
+        }, 1500);
+      }
+    }
+  };
+  gettitle() {
+    var that = this;
+    if (!this.placeId) {
+      wx.showToast({
+        title: that.lang.store_ID_not_exist,
+        icon: 'none',
+        duration: 1500
+      });
+      return;
+    }
+    var url = '/tour/oversea/getPlaceInfo?placeId=' + this.placeId;
+    apifunc.auth(url, 'get', '').then(function(res) {
+      if (!that.tableId) {
+        if (res.data.takeOutTableId) {
+          that.tableId = res.data.takeOutTableId;
+				}
+      }
+      that.storeName = res.data.name;
+			that.storeStatus = res.data.status;
+			that.area=res.data.area;
+			wx.setStorageSync('storeStatus', that.storeStatus);
+      wx.setStorageSync("area",that.area);
+      if(res.data.exchangeRate){
+        wx.setStorageSync("exchangeRate",res.data.exchangeRate);
+			}
+      that.$apply();
+    });
+  }
+  onGotUserInfo(e) {
+    var that = this;
+    if (e.detail.userInfo) {
+      this.$parent.globalData.userInfo = e.detail.userInfo;
+      var appid = this.$parent.globalData.appid;
+      var value = {
+        avatarUrl: e.detail.userInfo.avatarUrl,
+        city: e.detail.userInfo.city,
+        country: e.detail.userInfo.country,
+        gender: e.detail.userInfo.gender,
+        language: e.detail.userInfo.language,
+        nickName: e.detail.userInfo.nickName,
+        province: e.detail.userInfo.province
+      };
+      wx.login({
+        success: function(res) {
+          console.log(res)
+          if (res.code) {
+            //发起网络请求
+            // apifunc
+            //   .auth(
+            //     `/tour/api/miniAuth?appid=${appid}&code=${res.code}`,
+            //     'get',
+            //     value
+            //   )
+            //   .then(function(res) {
+            //     wx.setStorageSync('openid', res.data.openid);
+            //     wx.setStorageSync('userid', res.data.userid);
+            //     wx.setStorageSync('nickName', e.detail.userInfo.nickName);
+            //     that.gettoken(res.data.userid);
+            //     that.getAuth = false;
+            //     that.$apply();
+            //   });
+          } else {
+            console.log('登录失败！' + res.errMsg);
+          }
+        }
+      });
+    } else {
+      wx.showModal({
+        title: '警告',
+        content: '您点击了拒绝授权，将无法进入小程序，请授权之后再进入!!!',
+        showCancel: false,
+        confirmText: '返回授权',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击了“返回授权”');
+          }
+        }
+      });
+    }
+  }
+  getOpenSet(e) {
+    var that = this;
+    if (e.detail.authSetting['scope.userLocation']) {
+      that.locationAuth = false;
+      that.$apply();
+      console.log('获取权限成功。');
+    } else {
+      wx.showModal({
+        title: '警告',
+        content: '您点击了拒绝授权，将无法调起定位功能！',
+        showCancel: false,
+        confirmText: '返回授权',
+        success: function(res) {
+          if (res.confirm) {
+            that.locationAuth = true;
+            that.$apply();
+            console.log('用户点击了“返回授权”');
+          }
+        }
+      });
+    }
+  }
+  gettoken(USERID) {
+    var that = this;
+    let url = '/tour/api/getToken?userId=' + USERID;
+    apifunc.gettoken(url, 'get', '').then(function(res) {
+			let token = res.data;
+			let myDate = new Date();
+		  let time=myDate.getTime();
+			wx.setStorageSync('X-Token', token);
+			wx.setStorageSync('time', time);
+      that.$apply();
+    });
+  }
+  onLoad(options) {
+    var that = this;
+    var res = wx.getSystemInfoSync();
+    this.oheight = res.windowHeight;
+    this.selectIndex = 1;
+    this.getAuth = false;
+		this.locationAuth = false;
+    if (options && options.tableId) {
+      this.tableId = options.tableId;
+    } else {
+      this.tableId = '';
+    }
+    if (options && options.placeId) {
+      this.placeId = options.placeId;
+    } else {
+      this.placeId = '';
+		}
+		if (options && options.isdistance) {
+      this.isdistance = options.isdistance;
+    } else {
+      this.isdistance = '';
+		}
+    this.lang = this.$parent.globalData.language;
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting['scope.userInfo']) {
+          that.getAuth = true;
+        } else {
+					that.getAuth = false;
+					if(wx.getStorageSync('time')) {
+						let beforetime=wx.getStorageSync('time');
+						let myDate = new Date();
+						let nowtime=myDate.getTime();
+						let oTime=(nowtime-beforetime)-(23*60*60*1000)
+						if(oTime>0) {
+							that.gettoken(wx.getStorageSync('userid'))
+						}
+					}
+        }
+        that.$apply();
+      }
+		});
+		wx.showShareMenu();
+    this.gettitle();
+    this.$apply();
+  }
+}
+</script>

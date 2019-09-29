@@ -1,0 +1,1495 @@
+<style lang="less">
+page {
+  width: 100%;
+  height: 100%;
+}
+@keyframes identifier {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.Toorder {
+  .ordertitle {
+    font: 32rpx/100rpx '';
+    text-align: center;
+    color: #282828;
+    position: relative;
+    .ordertitle {
+      position: relative;
+      border-bottom: 1rpx solid #eee;
+      &::after {
+        width: 40rpx;
+        height: 10rpx;
+        background-color: #ff6666;
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+    .goon {
+      position: absolute;
+      top: 0;
+      right: 50rpx;
+      padding: 15rpx;
+      color: #fff;
+      background-color: #ff5050;
+      box-shadow: 0rpx 16rpx 24rpx 0rpx #ff9999;
+      border-radius: 0rpx 0rpx 16rpx 16rpx;
+      font: 28rpx/28rpx '';
+    }
+  }
+  .address {
+    .addinfo,
+    .addlist {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .addinfo {
+      padding: 32rpx 40rpx;
+      border-bottom: 1rpx solid #eee;
+      .addinfo-l {
+        font: 32rpx/32rpx '';
+        color: #282828;
+      }
+      .addinfo-r {
+        width: 48rpx;
+        height: 48rpx;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .addlist {
+      padding: 10rpx 40rpx;
+      border-bottom: 1rpx solid #eee;
+      .addlist-l {
+        font: 32rpx/48rpx '';
+        padding: 10rpx 0;
+        width: 560rpx;
+        word-break: break-all;
+      }
+      .addlist-r {
+        width: 48rpx;
+        height: 48rpx;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .addresslist-t,
+      .addresslist-b {
+        display: flex;
+        align-items: center;
+        .data {
+          margin-right: 15rpx;
+        }
+      }
+      .addresslist-b {
+        font: 26rpx/30rpx '';
+        color: #777;
+        .data {
+          text {
+            margin-left: 15rpx;
+          }
+        }
+      }
+    }
+  }
+  .person-dishfee {
+    .person {
+      padding: 32rpx 40rpx;
+      border-bottom: 1rpx solid #eee;
+      display: flex;
+      justify-content: space-between;
+      .person-l {
+        font: 32rpx/48rpx '';
+      }
+      .person-r {
+        width: 48rpx;
+        height: 48rpx;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .fee {
+      padding: 10rpx 40rpx;
+      border-bottom: 1rpx solid #eee;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .fee-l {
+        background: #fff3e0;
+        border: 1rpx solid #ffcc08;
+        color: #fb8c00;
+        border-radius: 10rpx;
+        font: 26rpx/26rpx '';
+        padding: 10rpx;
+      }
+      .fee-r {
+        display: flex;
+        .fee-rt {
+          font: 24rpx/32rpx '';
+          color: #777;
+          margin-right: 10rpx;
+        }
+        .fee-rb {
+          font: 32rpx/32rpx '';
+          color: #ff6666;
+        }
+      }
+    }
+  }
+  .dished {
+    .title {
+      padding: 10rpx 40rpx;
+      display: flex;
+      justify-content: space-between;
+      .title-l,
+      .title-r {
+        display: flex;
+        align-items: center;
+      }
+      .title-l {
+        display: flex;
+        align-items: center;
+        .title-lt {
+          font: 700 32rpx/45rpx '';
+          padding: 20rpx 0;
+          position: relative;
+          &::after {
+            width: 40rpx;
+            height: 10rpx;
+            background-color: #ff6666;
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+          }
+        }
+        .title-lb {
+          font: 22rpx/45rpx '';
+          color: #777;
+          margin-left: 10rpx;
+        }
+      }
+      .title-r {
+        color: #ff6666;
+        display: flex;
+        align-items: center;
+        .title-rt {
+          text {
+            font: 22rpx/32rpx '';
+          }
+          .payPrice {
+            margin-left: 10rpx;
+            font: 32rpx/32rpx '';
+          }
+          .rmb {
+            font: 22rpx/22rpx '';
+            color: #999;
+          }
+        }
+        .title-rb {
+          width: 48rpx;
+          height: 48rpx;
+          font-size: 0;
+          margin-left: 10rpx;
+          image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .active {
+          transform: rotate(180deg);
+          -ms-transform: rotate(180deg); /* IE 9 */
+          -moz-transform: rotate(180deg); /* Firefox */
+          -webkit-transform: rotate(180deg); /* Safari 和 Chrome */
+          -o-transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .dishbody {
+    padding-bottom: 130rpx;
+    .data {
+      padding: 30rpx 40rpx;
+      border-bottom: 1rpx solid #eee;
+      .data-t,
+      .data-b {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .data-t {
+        margin-bottom: 15rpx;
+        .name {
+          font: 24rpx/24rpx '';
+          color: #282828;
+          width: 500rpx;
+          word-break: break-all;
+        }
+        .amount {
+          font: 24rpx/24rpx '';
+          color: #777;
+        }
+      }
+      .data-b {
+        .extra {
+          width: 330rpx;
+          word-break: break-all;
+          font: 24rpx/24rpx '';
+          color: #777;
+          display: flex;
+        }
+        .price {
+          color: #ff5050;
+          display: flex;
+          text {
+            font: 22rpx/30rpx '';
+          }
+          .totalprice {
+            margin-left: 10rpx;
+            font: 700 30rpx/30rpx '';
+          }
+          .rmb {
+            font: 22rpx/30rpx "";
+            color: #999;
+          }
+        }
+      }
+    }
+    .extrafee {
+      padding: 20rpx 30rpx;
+      .serviceCharge,
+      .taxation,
+      .deliverFee {
+        display: flex;
+        padding: 0 30rpx;
+        justify-content: space-between;
+        background-color: #f2f2f2;
+        border-radius: 8rpx 8rpx 0rpx 0rpx;
+        font: 26rpx/64rpx '';
+        .serviceCharge-r {
+          font-weight: 700;
+          color: #ff6666;
+          .rmb {
+            font: 22rpx/64rpx "";
+            color: #999;
+          }
+        }
+        .taxation-r {
+          font-weight: 700;
+          color: #ff6666;
+          .rmb {
+            font: 22rpx/64rpx "";
+            color: #999;
+          }
+        }
+        .deliverFee-r {
+          font-weight: 700;
+          color: #ff6666;
+        }
+      }
+      .serviceCharge,
+      .taxation {
+        box-shadow: inset 0rpx -1rpx 0rpx 0rpx #e1e1e1;
+      }
+      .taxation.active {
+        box-shadow: none;
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 0;
+    height: 120rpx;
+    background: #fff;
+    .footer-l {
+      flex: 1;
+      padding: 0 30rpx;
+      color: #282828;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font: 32rpx/40rpx '';
+      .totalprice {
+        .totalprice-t {
+          font: 40rpx/40rpx '';
+        text {
+          font: 32rpx/40rpx '';
+        }
+        }
+        .rmb {
+          font: 22rpx/22rpx "";
+          color: #999;
+        }
+      }
+    }
+    .footer-r {
+      width: 240rpx;
+      background-color: #ff6666;
+      font: 700 40rpx/120rpx '';
+      text-align: center;
+      color: #fff;
+    }
+  }
+  .addressbox {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(37, 26, 26, 0.1);
+    .addressbox-c {
+      background: #fff;
+      border-radius: 20rpx 20rpx 0 0;
+      box-sizing: border-box;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      padding: 0 60rpx 66rpx;
+      .fillinfo {
+        text-align: center;
+        background-color: #ff6666;
+        font: 24rpx/24rpx '';
+        padding: 12rpx 0;
+        border-radius: 0px 0px 8px 8px;
+        margin: 0 auto;
+        width: 398rpx;
+        color: #fff;
+      }
+      .pleasefill {
+        font: 36rpx/36rpx '';
+        margin: 41rpx auto;
+        text-align: center;
+      }
+      .data {
+        margin-bottom: 42rpx;
+        .txt {
+          padding-left: 30rpx;
+          font: 26rpx/26rpx '';
+          margin-bottom: 10rpx;
+          text {
+            color: #ff5050;
+          }
+        }
+        .input {
+          width: 630rpx;
+          height: 80rpx;
+          background-color: #eeeeee;
+          border-radius: 8rpx;
+          border: 0;
+					font: 24rpx/24rpx '';
+					display: flex;
+					padding: 0 10rpx;
+					.input-l {
+						width: 100rpx;
+						height: 80rpx;
+						display: flex;
+						align-items: center;
+						position: relative;
+						.img {
+							width: 32rpx;
+							height: 32rpx; 
+							image {
+								width: 100%;
+								height: 100%;
+							}
+						}
+						.active {
+							transform:rotate(180deg);
+							-ms-transform:rotate(180deg); 	
+							-moz-transform:rotate(180deg); 	
+							-webkit-transform:rotate(180deg); 
+							-o-transform:rotate(180deg);
+						}
+						.label {
+							width: 50rpx;
+							text-align: center;
+							font: 24rpx/80rpx "";
+						}
+						.telList {
+							position: absolute;
+							bottom: -168rpx;
+							left: 0;
+							height:160rpx;
+							overflow-y:scroll;
+							background: #fff;
+							width: 80rpx;
+							border: 1rpx solid #eee;
+							font: 24rpx/50rpx "";
+						}
+					}
+          input {
+            width: 100%;
+            height: 100%;
+            flex: none;
+            padding: 10rpx;
+            box-sizing: border-box;
+          }
+        }
+      }
+      .headname {
+        display: flex;
+        .input {
+          width: 300rpx;
+        }
+        .data-r {
+          margin-left: 30rpx;
+        }
+      }
+      .Hotel {
+        .data-b {
+          display: flex;
+          position: relative;
+          .input {
+            width: 540rpx;
+          }
+          .clear {
+            flex: 1;
+            text-align: center;
+            font: 26rpx/80rpx '';
+            color: #ff5050;
+          }
+          .hotellist {
+            position: absolute;
+            max-height: 610rpx;
+            overflow-y: scroll;
+            width: 630rpx;
+            z-index: 99;
+            background-color: #ffffff;
+            box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.15);
+            border-radius: 8rpx;
+            margin-top: 99rpx;
+            .listitem {
+              padding: 28rpx 32rpx;
+              font: 28rpx/28rpx '';
+              color: #282828;
+              border-bottom: 1rpx solid #e1e1e1;
+            }
+          }
+        }
+      }
+      .sure {
+        width: 630rpx;
+        height: 80rpx;
+        background-color: #ff6666;
+        border-radius: 8rpx;
+        text-align: center;
+        font: 30rpx/80rpx '';
+        color: #fff;
+      }
+    }
+  }
+  .numbox {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    .numbox-c {
+      width: 100%;
+      height: 1000rpx;
+      box-sizing: border-box;
+      bottom: 0;
+      position: absolute;
+      background: #fff;
+      padding: 40rpx 0;
+    }
+    .close {
+      position: absolute;
+      width: 48rpx;
+      height: 48rpx;
+      top: 10rpx;
+      right: 10rpx;
+      image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .selectpeople {
+      color: #444;
+      font: 32rpx/32rpx '';
+      text-align: center;
+      margin: 60rpx auto;
+    }
+    .num {
+      .top,
+      .center,
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30rpx;
+        padding: 0 50rpx;
+        .data {
+          width: 140rpx;
+          height: 140rpx;
+          background-color: #ffffff;
+          border-radius: 16rpx;
+          border: solid 1rpx #cdcdcd;
+          font: 56rpx/140rpx '';
+          text-align: center;
+          color: #282828;
+        }
+        .select_num {
+          width: 140rpx;
+          height: 140rpx;
+          background-color: #ff5050;
+          box-shadow: 0rpx 16rpx 24rpx 0rpx #ff9999;
+          color: #fff;
+          border: 1rpx solid #ff5050;
+          animation: identifier 0.2s infinite;
+          animation-iteration-count: 1;
+          -webkit-animation: identifier 0.2s infinite;
+          -webkit-animation-iteration-count: 1;
+          -moz-animation: identifier 0.2s infinite;
+          -moz-animation-iteration-count: 1;
+          -o-animation: identifier 0.2s infinite;
+          -o-animation-iteration-count: 1;
+          -ms-animation: identifier 0.2s infinite;
+          -ms-animation-iteration-count: 1;
+        }
+      }
+    }
+    .sure {
+      width: 480rpx;
+      height: 120rpx;
+      font: 700 30rpx/120rpx '';
+      text-align: center;
+      color: #fff;
+      margin: 100rpx auto;
+      background: #ff5050;
+      border-radius: 20rpx;
+    }
+  }
+  .paysuccess {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    .paysuccessbox {
+      height: 1000rpx;
+      background: #fff;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 216rpx 0 87rpx;
+      box-sizing: border-box;
+      .close {
+        width: 48rpx;
+        height: 48rpx;
+        position: absolute;
+        top: 40rpx;
+        right: 40rpx;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .img {
+        width: 128rpx;
+        height: 128rpx;
+        margin: 0 auto 80rpx;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .successful {
+        font: 700 40rpx/40rpx '';
+        text-align: center;
+      }
+      .block {
+        width: 581rpx;
+        height: 1rpx;
+        background-color: #cdcdcd;
+        margin: 21rpx auto;
+      }
+      .please_wait {
+        font: 26rpx/26rpx '';
+        color: #777;
+        text-align: center;
+      }
+      .returnIndex {
+        margin: 300rpx auto 0;
+        width: 480rpx;
+        height: 122rpx;
+        background-color: #ff6666;
+        box-shadow: 0rpx 16rpx 24rpx 0rpx #ff9999;
+        color: #fff;
+        font: 40rpx/122rpx '';
+        text-align: center;
+        border-radius: 16rpx;
+      }
+    }
+  }
+}
+</style>
+<template>
+  <view class="Toorder">
+    <wxs src="../../utils/addhttp.wxs" module="tools"/>
+    <view class="ordertitle">
+      <view class="ordertitle">{{lang.The_order}}</view>
+      <view class="goon" @tap="addfood">{{lang.Add_food}}</view>
+    </view>
+    <view class="address" wx:if="{{isTakeOut=='Y'}}">
+      <view class="addinfo" wx:if="{{addressInfo==''}}" @tap="showaddress">
+        <view class="addinfo-l">{{lang.Add_Receiving_Address}}:</view>
+        <view class="addinfo-r">
+          <image src="../../img/enter.png"/>
+        </view>
+      </view>
+      <view class="addlist" wx:else @tap="showaddress">
+        <view class="addlist-l">
+          <view class="addresslist">{{lang.Receiving_address}}:</view>
+          <view class="addresslist-t">
+            <view class="data">{{addressInfo?tools.splitString(addressInfo,0):''}}</view>
+            <view class="data">{{addressInfo?tools.splitString(addressInfo,1):''}}</view>
+            <view class="data">{{addressInfo?tools.splitString(addressInfo,2):''}}</view>
+          </view>
+          <view class="addresslist-b">
+            <view class="data">
+              {{addressInfo?tools.splitString(addressInfo,3):''}}
+              <text>{{addressInfo?tools.splitString(addressInfo,5):''}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="addlist-r">
+          <image src="../../img/enter.png"/>
+        </view>
+      </view>
+    </view>
+    <view class="person-dishfee" wx:if="{{totalPrice}}">
+      <view class="person" @tap="selectpeoplenum">
+        <view class="person-l">
+          <span>{{selectPropleNum}}</span>
+          <span>{{lang.People_have_dinner}}</span>
+        </view>
+        <view class="person-r">
+          <image src="../../img/enter.png"/>
+        </view>
+      </view>
+      <view class="fee">
+        <view class="fee-l">{{lang.Tableware_fee}}</view>
+        <view class="fee-r">
+          <view
+            class="fee-rt"
+          >({{tools.currency(currencyN)}} {{busiInfo.tablewareMon?busiInfo.tablewareMon:0}}×{{selectPropleNum}})</view>
+          <view class="fee-rb">{{tools.currency(currencyN)}} {{dishware}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="dished">
+      <view class="title">
+        <view class="title-l">
+          <view class="title-lt">{{lang.Have_some_food}}</view>
+          <view class="title-lb" wx:if="{{carNum}}">x{{carNum?carNum:''}}</view>
+        </view>
+        <view class="title-r">
+          <view class="title-rt">
+            <view>
+              <text>{{tools.currency(currencyN)}}</text>
+              <text class="payPrice">{{tools.thousandBitSeparator(payPrice)}}</text>
+            </view>
+            <view class="rmb" wx:if="{{isTakeOut != 'Y' && exchangeRate != 0}}">
+              <text>(约合:￥{{tools.newTofixed(payPrice*exchangeRate,2)}})</text>
+            </view>
+          </view>
+          <view class="title-rb {{isactive?'active':''}}" @tap="closelist">
+            <image src="../../img/down.png"/>
+          </view>
+        </view>
+      </view>
+      <view class="dishbody" wx:if="{{isdishbody}}">
+        <repeat for="{{cartMenu}}" key="index" index="index" item="item">
+          <view class="data">
+            <view class="data-t">
+              <view class="name">{{item.menuName?item.menuName:''}}</view>
+              <view class="amount">x{{item.amount?item.amount:''}}</view>
+            </view>
+            <view class="data-b">
+              <view class="extra" wx:if="{{item.extras}}">
+                <repeat for="{{item.extras}}" key="indexs" index="indexs" item="items">
+                  <view class="extra-c">
+                    <text wx:if="{{indexs!=0}}">、</text>
+                    {{tools.splitString(items.values[0],1)}}
+                  </view>
+                </repeat>
+              </view>
+              <view class="price">
+                <text>{{tools.currency(currencyN)}}</text>
+                <text class="totalprice">{{tools.thousandBitSeparator(item.price * item.amount)}}</text>
+                <text class='rmb' wx:if="{{isTakeOut != 'Y' && exchangeRate != 0}}">(约合:￥{{tools.newTofixed(item.price * item.amount*exchangeRate,2)}})</text>
+              </view>
+            </view>
+          </view>
+        </repeat>
+        <view class="extrafee">
+          <view class="serviceCharge">
+            <view class="serviceCharge-l">{{lang.The_service_fee}}</view>
+            <view class="serviceCharge-r">{{tools.currency(currencyN)}} {{tools.thousandBitSeparator(serviceCharge)}}<text class='rmb' wx:if="{{isTakeOut != 'Y' && exchangeRate != 0}}">(约合:￥{{tools.newTofixed(serviceCharge*exchangeRate,2)}})</text></view>
+          </view>
+          <view class="taxation {{isTakeOut == 'Y'?'':'active'}}">
+            <view class="taxation-l">{{lang.Tax_point}}</view>
+            <view class="taxation-r">{{tools.currency(currencyN)}} {{tools.thousandBitSeparator(tallage)}}<text class='rmb' wx:if="{{isTakeOut != 'Y' && exchangeRate != 0}}">(约合:￥{{tools.newTofixed(tallage*exchangeRate,2)}})</text></view>
+          </view>
+          <view class="deliverFee" wx:if="{{isTakeOut == 'Y'}}"> 
+            <view class="deliverFee-l">{{lang.Distribution_fee}}</view>
+            <view class="deliverFee-r">{{tools.currency(currencyN)}} {{tools.thousandBitSeparator(deliverFee)}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="footer">
+      <view class="footer-l">
+        <view class="footertxt">{{lang.A_combined}}</view>
+        <view class="totalprice">
+          <view class='totalprice-t'><text>{{tools.currency(currencyN)}}</text>{{tools.thousandBitSeparator(payPrice)}}</view>
+          <view class='rmb' wx:if="{{isTakeOut != 'Y' && exchangeRate != 0}}"><text>(约合:￥{{tools.newTofixed(payPrice*exchangeRate,2)}})</text></view>
+        </view>
+      </view>
+      <view class="footer-r" @tap="submit">{{lang.Submit_orders}}</view>
+    </view>
+    <view class="addressbox" wx:if="{{isaddress}}" style="height:{{oheight}}px" @tap="closeaddress">
+      <view class="addressbox-c" catchtap="returnall">
+        <view class="fillinfo">以下信息请使用英文填写</view>
+        <view class="pleasefill">{{lang.Please_fill_the_receipt_information}}</view>
+        <view class="data headname">
+          <view class="data-l">
+            <view class="txt">
+              姓 LAST NAME
+              <text>*</text>
+            </view>
+            <view class="input">
+              <input @input="inputblank('name')" value="{{name}}" @change="judgestyle('name')"/>
+            </view>
+          </view>
+          <view class="data-r">
+            <view class="txt">
+              名 SUR NAME
+              <text>*</text>
+            </view>
+            <view class="input">
+              <input
+                @input="inputblank('surname')"
+                value="{{surname}}"
+                @change="judgestyle('surname')"
+              />
+            </view>
+          </view>
+        </view>
+        <view class="data Hotel">
+          <view class="txt">
+            酒店名称 Hotel
+            <text>*</text>
+          </view>
+          <view class="data-b">
+            <view class="input">
+              <input @input="inputblank('hotel')" @focus="focusinput" value="{{hotel}}"/>
+            </view>
+            <view class="clear" @tap="clearHotel">Clear</view>
+            <view class="hotellist" wx:if="{{isShowHotel}}">
+              <repeat for="{{hotelList}}" key="index" index="index" item="item">
+                <view class="listitem" @tap="selectHotel({{index}})">
+									<view class="listitem-t">{{item.hotel?tools.splithotelString(item.hotel,0):''}}</view>
+									<view class="listitem-b">{{item.hotel?tools.splithotelString(item.hotel,1):''}}</view>
+								</view>
+              </repeat>
+            </view>
+          </view>
+        </view>
+        <view class="data">
+          <view class="txt">
+            酒店地址 Address
+            <text>*</text>
+          </view>
+          <view class="input">
+            <input @input="inputblank('address')" value="{{address}}"/>
+          </view>
+        </view>
+        <view class="data">
+          <view class="txt">
+            房间号码 Room
+            <text>*</text>
+          </view>
+          <view class="input">
+            <input @input="inputblank('room')" value="{{room}}" @change="judgestyle('room')"/>
+          </view>
+        </view>
+        <view class="data">
+          <view class="txt">
+            联系电话 Tel
+            <text>*</text>
+          </view>
+          <view class="input">
+						<view class="input-l">
+							<view class="label" @tap="showtelist">{{selectedtel}}</view>
+							<view class="img {{istellist?'active':''}}" @tap="showtelist"><image src='../../img/open.png'/></view>
+							<view class="telList" wx:if="{{istellist}}">
+								<repeat for="{{telList}}" key="index" index="index" item="item">
+									<view class="listitem" @tap="selecttel({{item}})">{{item.tel?item.tel:''}}</view>
+								</repeat>
+							</view>
+						</view>
+            <input @input="inputblank('mobile')" value="{{mobile}}" @change="judgestyle('mobile')"/>
+          </view>
+        </view>
+        <view class="sure" @tap="sure">{{lang.confirm}}</view>
+      </view>
+    </view>
+    <view class="numbox" wx:if="{{isnum}}" style="height:{{oheight}}px" @tap="closenum">
+      <view class="numbox-c" catchtap="returnnum">
+        <view class="close" @tap="closenum">
+          <image src="../../img/close.png"/>
+        </view>
+        <view class="selectpeople">{{lang.Please_select_the_number_of_participants}}</view>
+        <view class="num">
+          <view class="top">
+            <view class="data {{(selectIndex == 1)?'select_num':''}}" @tap="getVal(1)">1</view>
+            <view class="data {{(selectIndex == 2)?'select_num':''}}" @tap="getVal(2)">2</view>
+            <view class="data {{(selectIndex == 3)?'select_num':''}}" @tap="getVal(3)">3</view>
+            <view class="data {{(selectIndex == 4)?'select_num':''}}" @tap="getVal(4)">4</view>
+          </view>
+          <view class="center">
+            <view class="data {{(selectIndex == 5)?'select_num':''}}" @tap="getVal(5)">5</view>
+            <view class="data {{(selectIndex == 6)?'select_num':''}}" @tap="getVal(6)">6</view>
+            <view class="data {{(selectIndex == 7)?'select_num':''}}" @tap="getVal(7)">7</view>
+            <view class="data {{(selectIndex == 8)?'select_num':''}}" @tap="getVal(8)">8</view>
+          </view>
+          <view class="bottom">
+            <view class="data {{(selectIndex == 9)?'select_num':''}}" @tap="getVal(9)">9</view>
+            <view class="data {{(selectIndex == 10)?'select_num':''}}" @tap="getVal(10)">10</view>
+            <view class="data {{(selectIndex == 11)?'select_num':''}}" @tap="getVal(11)">11</view>
+            <view class="data {{(selectIndex == 12)?'select_num':''}}" @tap="getVal(12)">12</view>
+          </view>
+        </view>
+        <view class="sure" @tap="selectnum">{{lang.determine}}</view>
+      </view>
+    </view>
+    <view class="paysuccess" wx:if="{{issuccess}}" style="height:{{oheight}}px">
+      <view class="paysuccessbox" catchtap="returnall">
+        <view class="img">
+          <image src="../../img/success.png" wx:if="{{issuc}}"/>
+          <image wx:else src="../../img/cha.png"/>
+        </view>
+        <view>
+          <view class="successful" wx:if="{{issuc}}">{{lang.Place_an_order_successfully}}</view>
+          <view class="successful" wx:else>{{lang.Failure_to_pay}}</view>
+        </view>
+        <view class="block"></view>
+        <view>
+          <view class="please_wait" wx:if="{{issuc}}">{{lang.Please_wait_and_to_checkout_counter}}</view>
+          <view class="please_wait" wx:else>{{lang.please_return_detail}}</view>
+        </view>
+        <view class="returnIndex" @tap="addfood">{{lang.Return_to_the_menu}}</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy';
+import apifunc from '@/api/index.js';
+import { imgBaseUrl } from '@/utils/env.js';
+import { splitString } from '@/utils/tool.js';
+export default class Toorder extends wepy.page {
+  data = {
+    lang: '',
+    language: '',
+    oheight: '',
+    isaddress: false,
+    isnum: false,
+    tableId: '',
+    placeId: '',
+    storeStatus: '',
+    selectPropleNum: '',
+    selectIndex: 1,
+    busiInfo: '',
+    isTakeOut: '',
+    addressInfo: '',
+    totalPrice: '11',
+    dishware: 0,
+    currencyN: '',
+    carNum: 12,
+    payPrice: 0,
+    isactive: false,
+    isdishbody: true,
+    menuPrice: '',
+    serviceCharge: 0,
+    tallage: 0,
+    service: '',
+    cartMenu: '',
+    userid: '',
+    name: '',
+    surname: '',
+    hotel: '',
+    mobile: '',
+    address: '',
+    room: '',
+    disPrice: 0,
+    cartIds: '',
+    orderNo: '',
+    checkTableware: true,
+    issuccess: false,
+    issuc: false,
+    deliverFee: 0,
+    exchangeRate:0,//汇率
+    adresslist: [],
+    hotelList: [],
+    isShowHotel: false,
+		bstop: 0,
+		telList:[
+			{"country":"中国","tel":"86"},
+			{"country":"香港","tel":"852"},
+			{"country":"台湾","tel":"886"},
+			{"country":"日本","tel":"81"},
+			{"country":"越南","tel":"84"},
+			{"country":"韩国","tel":"82"},
+			{"country":"马来西亚","tel":"60"},
+			{"country":"印度尼西亚","tel":"62"},
+			{"country":"泰国","tel":"66"}
+			],
+			selectedtel:"86",
+			istellist:false
+  };
+  methods = {
+		showtelist() {
+      this.istellist=!this.istellist;
+		},
+		selecttel(item) {
+			this.selectedtel=item.tel;
+			this.istellist=false;
+		},
+    focusinput() {},
+    clearHotel() {
+      this.hotel = '';
+      this.address = '';
+      this.isShowHotel = false;
+    },
+    selectHotel(index) {
+      this.hotel = this.hotelList[index].hotel;
+      this.address = this.hotelList[index].address;
+      this.isShowHotel = false;
+    },
+    submit() {
+      var that = this;
+      var content="";
+      if(that.isTakeOut == 'Y') {
+        content='巴厘岛整体配送速度较慢，我们会尽快为您送达，如有不便还请谅解！'
+      } else {
+        content="你确定提交点餐订单？"
+      }
+      wx.showModal({
+        title: that.lang.Confirm_the_order + '?',
+        content:content,
+        success: function(res) {
+          if (res.confirm) {
+            if (that.isTakeOut == 'Y') {
+              //外卖
+              if (that.currencyN == 'CNY') {
+            } else {
+              wx.showToast({
+                title: that.lang.Support_RMB_Payment_Only,
+                icon: 'none',
+                duration: 1000
+              });
+              return;
+            }
+              if (that.addressInfo) {
+              } else {
+                wx.showToast({
+                  title: that.lang.Please_improve_the_receiving_information,
+                  icon: 'none',
+                  duration: 1000
+                });
+                return;
+              }
+            } else {
+              //餐厅点餐
+              that.addressInfo = '';
+            }
+            if (wx.getStorageSync('storeId') && that.tableId && that.userid) {
+            } else {
+              wx.showToast({
+                title: that.lang.Menu_information_incorrect,
+                icon: 'none',
+                duration: 1000
+              });
+              return;
+            }
+            if (!that.cartMenu || !that.totalPrice || that.totalPrice == 0) {
+              wx.showToast({
+                title: that.lang.Please_select_dishes_and_orders,
+                icon: 'none',
+                duration: 1000
+              });
+              return;
+            }
+            that.createorder();
+          } else if (res.cancel) {
+            console.log('用户点击取消');
+          }
+        }
+      });
+    },
+    getVal(data) {
+      this.selectIndex = data;
+    },
+    selectpeoplenum() {
+      this.selectIndex = this.selectPropleNum;
+      this.isnum = true;
+    },
+    returnnum() {},
+    closenum() {
+      this.isnum = false;
+    },
+    selectnum() {
+      this.isnum = false;
+      this.selectPropleNum = this.selectIndex;
+      if (this.busiInfo.tablewareMon) {
+        this.dishware = (
+          this.busiInfo.tablewareMon * this.selectPropleNum
+        ).toFixed(2);
+      } else {
+        this.dishware = 0;
+      }
+      this.payPrice = parseFloat(
+        Number(this.menuPrice) +
+          Number(this.serviceCharge) +
+          Number(this.tallage) +
+          Number(this.dishware) +
+          Number(this.deliverFee)
+      ).toFixed(2);
+      this.totalPrice = this.payPrice;
+    },
+    closelist() {
+      this.isactive = !this.isactive;
+      this.isdishbody = !this.isdishbody;
+    },
+    judgestyle(data, e) {
+      var codereg = /<script.*?>.*?<\/script>/gi;
+      if (!codereg.test(e.detail.value)) {
+        if (data == 'name') {
+          this.name = e.detail.value;
+        } else if (data == 'mobile') {
+          this.mobile = e.detail.value;
+        } else if (data == 'address') {
+          this.address = e.detail.value;
+        } else if (data == 'room') {
+          this.room = e.detail.value;
+        } else if (data == 'surname') {
+          this.surname = e.detail.value;
+        } else if (data == 'hotel') {
+          this.hotel = e.detail.value;
+        }
+      } else {
+        if (data == 'name') {
+          this.name = '';
+        } else if (data == 'mobile') {
+          this.mobile = '';
+        } else if (data == 'address') {
+          this.address = '';
+        } else if (data == 'room') {
+          this.room = '';
+        } else if (data == 'surname') {
+          this.surname = '';
+        } else if (data == 'hotel') {
+          this.hotel = '';
+        }
+        wx.showToast({
+          title: '含有非法字符，请正确填写!',
+          icon: 'none',
+          duration: 1000
+        });
+        this.$apply();
+      }
+    },
+    inputblank(data, e) {
+      var that = this;
+      if (data == 'name') {
+        this.name = e.detail.value;
+      } else if (data == 'mobile') {
+        this.mobile = e.detail.value;
+      } else if (data == 'address') {
+        this.address = e.detail.value;
+      } else if (data == 'room') {
+        this.room = e.detail.value;
+      } else if (data == 'surname') {
+        this.surname = e.detail.value;
+      } else if (data == 'hotel') {
+        this.hotel = e.detail.value;
+        if (!this.hotel) {
+          this.hotelList = [];
+        }
+        if (this.adresslist && this.adresslist.length > 0) {
+          if (this.hotel) {
+            this.hotelList = [];
+            this.adresslist.forEach(function(e) {
+              var inputKey = that.hotel.toLowerCase();
+              var textKey = e.hotel.toLowerCase();
+              if (textKey.indexOf(inputKey) > -1) {
+                that.isShowHotel = true;
+                that.hotelList.push(e);
+              }
+            });
+          }
+        }
+      }
+    },
+    sure() {
+      if (
+        this.name &&
+        this.mobile &&
+        this.address &&
+        this.room &&
+        this.surname &&
+        this.hotel
+      ) {
+        this.isaddress = false;
+        this.addressInfo =
+          this.name +
+          '|' +
+          this.surname +
+          '|' +
+          this.selectedtel+this.mobile +
+          '|' +
+          this.hotel +
+          '|' +
+          this.address +
+          '|' +
+          this.room;
+        if (this.addressInfo) {
+          wx.setStorageSync('address', this.addressInfo);
+        }
+      } else {
+        wx.showToast({
+          title: this.lang.Please_enter_correct_information,
+          icon: 'none',
+          duration: 1000
+        });
+      }
+    },
+    cancel() {
+      this.isaddress = false;
+    },
+    returnall() {},
+    showaddress() {
+      this.isaddress = true;
+    },
+    closeaddress() {
+      this.isaddress = false;
+    },
+    addfood() {
+      var that = this;
+      wx.redirectTo({
+        url: `/pages/menuIndex/index?placeId=${that.placeId}&tableId=${
+          that.tableId
+        }&selectPropleNum=${that.selectPropleNum}`,
+        success: function() {},
+        fail: function() {},
+        complete: function() {}
+      });
+    }
+  };
+
+  createorder() {
+    var that = this;
+    var url =
+      '/tour/menuOrder/order?lang=' +
+      this.language +
+      '&checkTableware=' +
+      this.checkTableware;
+    var data = {
+      storeId: wx.getStorageSync('storeId'),
+      tableId: this.tableId,
+      userId: this.userid,
+      totalPrice: this.totalPrice,
+      payPrice: this.payPrice,
+      disPrice: this.disPrice,
+      taxation: Number(this.tallage),
+      serviceCharge: Number(this.serviceCharge),
+      deliverFee: Number(this.deliverFee),
+      peopleNumber: this.selectPropleNum,
+      comments: '',
+      cartIds: this.cartIds,
+      payType: 2,
+      address: this.addressInfo,
+      currency: this.currencyN,
+      orderFrom: 'mini'
+    };
+    apifunc.createorder(url, 'post', data).then(function(res) {
+      if (res.meta.success) {
+        if (res.data.orderNo) {
+          that.orderNo = res.data.orderNo;
+          if (that.isTakeOut != 'Y') {
+            that.issuccess = true;
+            that.issuc = true;
+            //点餐不开启支付
+          } else {
+            //开启支付
+            that.toPay();
+          }
+        }
+      } else {
+        that.issuccess = true;
+        that.issuc = false;
+        wx.showToast({
+          title: that.lang.Server_error,
+          icon: 'none',
+          duration: 1000
+        });
+        return;
+      }
+      that.$apply();
+    });
+  }
+  toPay() {
+    var that = this;
+    var url =
+      '/tour/paymentOrder/payMenu?orderNo=' + that.orderNo + '&tradeType=3';
+    apifunc.toPay(url, 'post', '').then(function(res) {
+      if (res.meta.success) {
+        wx.requestPayment({
+          timeStamp: res.data.data.timeStamp,
+          nonceStr: res.data.data.nonceStr,
+          package: res.data.data.package,
+          signType: res.data.data.signType,
+          paySign: res.data.data.sign,
+          success: function(res) {
+            that.issuccess = true;
+            that.issuc = true;
+            that.$apply();
+          },
+          fail: function(res) {
+            that.issuccess = true;
+            that.issuc = false;
+            if (res.errMsg == 'requestPayment:fail cancel') {
+              wx.showToast({
+                title: '用户点击取消了支付',
+                icon: 'none',
+                duration: 1000
+              });
+            }
+            wx.showToast({
+              title: '用户支付失败',
+              icon: 'none',
+              duration: 500
+            });
+            that.$apply();
+          },
+          complete: function(res) {}
+        });
+      } else {
+        wx.showToast({
+          title: that.lang.Server_error,
+          icon: 'none',
+          duration: 1000
+        });
+        return;
+      }
+      that.$apply();
+    });
+  }
+  getCartMenu() {
+    var that = this;
+    if (this.tableId && this.userid) {
+      var url =
+        '/tour/menuCart/list?tableId=' +
+        this.tableId +
+        '&lang=' +
+        this.language +
+        '&userId=' +
+        this.userid;
+      apifunc.getCartMenu(url, 'get', '').then(function(res) {
+        if (res.meta.success) {
+          that.menuPrice = 0;
+          that.serviceCharge = 0;
+          that.tallage = 0;
+          that.service = 0;
+          that.carNum = 0;
+          that.cartMenu = res.list;
+          var num = 0;
+          var total = 0;
+
+          that.carNum = that.cartMenu.length;
+          that.cartMenu.forEach(function(items, indexs) {
+            total += Number(items.price) * Number(items.amount);
+            num += Number(items.amount);
+            that.cartIds += items.id + ',';
+          });
+          that.menuPrice = total;
+          that.carNum = num;
+          //服务费
+          if (that.busiInfo.serviceChargePoint) {
+            that.serviceCharge = (
+              (that.menuPrice * that.busiInfo.serviceChargePoint) /
+              100
+            ).toFixed(2);
+          } else {
+            that.serviceCharge = 0;
+          }
+
+          //税点
+          if (that.busiInfo.taxationPoint) {
+            that.tallage = (
+              (that.menuPrice * that.busiInfo.taxationPoint) /
+              100
+            ).toFixed(2);
+          } else {
+            that.tallage = 0;
+          }
+
+          if (that.isTakeOut == 'Y') {
+            if (that.busiInfo.deliverFee) {
+              that.deliverFee = that.busiInfo.deliverFee.toFixed(2);
+            } else {
+              that.deliverFee = 0;
+            }
+          }
+          that.service = Number(that.serviceCharge) + Number(that.tallage);
+          if (that.busiInfo.tablewareMon) {
+            that.dishware = (
+              Number(that.busiInfo.tablewareMon) * Number(that.selectPropleNum)
+            ).toFixed(2);
+          } else {
+            that.dishware = 0;
+          }
+          that.payPrice = (
+            Number(that.menuPrice) +
+            Number(that.serviceCharge) +
+            Number(that.tallage) +
+            Number(that.dishware) +
+            Number(that.deliverFee)
+          ).toFixed(2);
+          that.totalPrice = that.payPrice;
+        }
+        that.$apply();
+      });
+    }
+  }
+  getAdreeInfo() {
+    var that = this;
+    if (wx.getStorageSync('area')) {
+      var url = '/tour/oversea/getHotel/' + wx.getStorageSync('area');
+      apifunc.getCartMenu(url, 'get', '').then(function(res) {
+        if (res.meta.success) {
+          that.adresslist = res.list;
+          that.$apply();
+        }
+      });
+    }
+  }
+  onLoad(options) {
+    var that = this;
+    this.language = this.$parent.globalData.langtxt;
+    this.lang = this.$parent.globalData.language;
+    var res = wx.getSystemInfoSync();
+    this.oheight = res.windowHeight;
+    this.payPrice = 0;
+    this.deliverFee = 0;
+    this.isaddress = false;
+    this.isactive = false;
+    this.checkTableware = true;
+    this.isdishbody = true;
+    this.isnum = false;
+    this.issuccess = false;
+    this.issuc = false;
+    this.isShowHotel = false;
+    this.orderNo = '';
+    this.disPrice = 0;
+    this.dishware = 0;
+    this.cartIds = '';
+		this.serviceCharge = 0;
+		this.istellist=false;
+    this.tallage = 0;
+    this.getAdreeInfo();
+    if (wx.getStorageSync('exchangeRate')) {
+      this.exchangeRate = wx.getStorageSync('exchangeRate');
+    }
+    if (options && options.tableId) {
+      this.tableId = options.tableId;
+    } else {
+      this.tableId = '';
+    }
+    if (options && options.isTakeOut) {
+      this.isTakeOut = options.isTakeOut;
+    } else {
+      this.isTakeOut = '';
+    }
+    if (options && options.selectPropleNum) {
+      this.selectPropleNum = options.selectPropleNum;
+    } else {
+      this.selectPropleNum = '';
+    }
+    this.selectIndex = this.selectPropleNum;
+    if (options && options.placeId) {
+      this.placeId = options.placeId;
+    } else {
+      this.placeId = '';
+    }
+    if (wx.getStorageSync('busiInfo')) {
+      this.busiInfo = JSON.parse(wx.getStorageSync('busiInfo'));
+    }
+    if (wx.getStorageSync('address')) {
+      this.addressInfo = wx.getStorageSync('address');
+    } else {
+      this.addressInfo = '';
+    }
+    if (this.addressInfo) {
+      if (splitString(that.addressInfo, 0)) {
+        this.name = splitString(that.addressInfo, 0);
+      }
+      if (splitString(that.addressInfo, 1)) {
+        this.surname = splitString(that.addressInfo, 1);
+      }
+      if (splitString(that.addressInfo, 2)) {
+        this.mobile = splitString(that.addressInfo, 2);
+      }
+      if (splitString(that.addressInfo, 3)) {
+        this.hotel = splitString(that.addressInfo, 3);
+      }
+      if (splitString(that.addressInfo, 4)) {
+        this.address = splitString(that.addressInfo, 4);
+      }
+      if (splitString(that.addressInfo, 5)) {
+        this.room = splitString(that.addressInfo, 5);
+      }
+    }
+    if (wx.getStorageSync('currencyN')) {
+      this.currencyN = wx.getStorageSync('currencyN');
+    } else {
+      this.currencyN = '';
+    }
+    if (wx.getStorageSync('userid')) {
+      this.userid = wx.getStorageSync('userid');
+    }
+    this.getCartMenu();
+    this.$apply();
+  }
+}
+</script>

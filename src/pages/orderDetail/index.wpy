@@ -1,0 +1,793 @@
+<style lang="less">
+.order_detail {
+  min-height: 100vh;
+  height: auto;
+  font-family: SourceHanSansCN-Regular;
+  position: relative;
+  background: #f2f2f2;
+  .line {
+    border-top: 1rpx solid #eee;
+  }
+  .head_img {
+    width: 100%;
+    height: 112rpx;
+    position: absolute;
+    z-index: 8;
+  }
+  .status {
+    color: #fff;
+    font-size: 34rpx;
+    font-weight: bold;
+    position: absolute;
+    z-index: 8;
+    top: 64rpx;
+    left: 60rpx;
+  }
+  .load {
+    text-align: center;
+    position: relative;
+    .load_img {
+      margin-top: 450rpx;
+      width: 128rpx;
+      height: 128rpx;
+    }
+  }
+  .no_data_img {
+    text-align: center;
+    margin-top: 300rpx;
+    image {
+      width: 100rpx;
+      height: 122rpx;
+    }
+    view {
+      font-size: 28rpx;
+      color: #999;
+      margin: 20rpx;
+    }
+  }
+  .content {
+    width: 100%;
+    position: absolute;
+    top: 120rpx;
+    background: #f2f2f2;
+    padding-bottom: 180rpx;
+    .head_text {
+      background: #ffffff;
+      border-radius: 8rpx;
+      padding: 30rpx;
+      padding-top: 18rpx;
+      font-size: 28rpx;
+      color: #999999;
+      position: relative;
+      z-index: 10;
+      margin-right: 30rpx;
+      margin-left: 30rpx;
+      view {
+        margin-top: 12rpx;
+      }
+      .name {
+        font-size: 32rpx;
+        color: #222;
+        font-weight: bold;
+      }
+    }
+    .info {
+      background: #fff;
+      border-radius: 8rpx;
+      margin-top: 30rpx;
+      margin-right: 30rpx;
+      margin-left: 30rpx;
+      .info_head {
+        line-height: 64rpx;
+        padding-left: 30rpx;
+        padding-right: 30rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24rpx;
+        color: #999999;
+        border-bottom: 1px solid #eee;
+        view {
+          text {
+            color: #ff5050;
+          }
+        }
+      }
+      .list_info {
+        padding: 0 30rpx;
+        .list {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 30rpx 0;
+          .left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .item_img {
+              width: 80rpx;
+              height: 80rpx;
+              min-height: 80rpx;
+              border-radius: 8rpx;
+              margin-right: 30rpx;
+            }
+            .text {
+              flex: 1;
+              .text_1 {
+                font-size: 30rpx;
+                color: #282828;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                margin-bottom: 10rpx;
+              }
+              .text_2 {
+                font-size: 22rpx;
+                color: #999;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+              }
+            }
+          }
+          .right {
+            .right-t {
+              text-align: right;
+              font-size: 0;
+              image {
+                width: 40rpx;
+                height: 40rpx;
+              }
+            }
+            .right-b {
+              color: #222222;
+              display: flex;
+              align-items: center;
+            }
+            .count {
+              font-size: 22rpx;
+            }
+            .price {
+              font-size: 28rpx;
+              font-weight: bold;
+              margin-left: 30rpx;
+            }
+            .rmb {
+              font: 22rpx/22rpx "";
+              color: #999;
+            }
+          }
+        }
+        .serve_content {
+          border-radius: 8rpx;
+          background: #f8f8f8;
+          margin-bottom: 22rpx;
+          .serve {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            line-height: 64rpx;
+            font-size: 28rpx;
+            color: #777;
+            padding-left: 30rpx;
+            padding-right: 30rpx;
+            .rmb {
+            font: 22rpx/22rpx "";
+            color: #999;
+          }
+          }
+          .serve_line {
+            border-top: 1rpx solid #eee;
+          }
+        }
+        .total_price {
+          line-height: 64rpx;
+          display: flex;
+          justify-content: flex-end;
+          font-size: 28rpx;
+          font-weight: bold;
+          .text_1 {
+            color: #282828;
+          }
+          .text_2 {
+            color: #ff5050;
+          }
+          .rmb {
+            font: 22rpx/22rpx "";
+            color: #999;
+          }
+        }
+      }
+    }
+    .store_info {
+      background: #fff;
+      margin-right: 30rpx;
+      margin-left: 30rpx;
+      border-radius: 8rpx;
+      margin-top: 30rpx;
+      .head {
+        line-height: 64rpx;
+        padding-left: 30rpx;
+        font-size: 24rpx;
+        color: #999;
+        border-bottom: 1rpx solid #eee;
+      }
+      .store_content {
+        padding: 0 30rpx;
+        .store_name {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          line-height: 96rpx;
+          font-size: 32rpx;
+          font-weight: bold;
+          border-bottom: 1rpx solid #eee;
+          text {
+            flex: 1;
+          }
+          .icon {
+            width: 48rpx;
+            height: 48rpx;
+          }
+        }
+        .phone {
+          line-height: 87rpx;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 28rpx;
+          color: #222;
+          .call {
+            min-width: 76rpx;
+            text-align: center;
+            padding: 0rpx 20rpx;
+            border: 1rpx solid #eee;
+            border-radius: 24rpx;
+            font-size: 26rpx;
+            color: #999;
+            line-height: 48rpx;
+          }
+        }
+      }
+      .adress {
+        font-size: 24rpx;
+        color: #999;
+        padding: 20rpx 30rpx;
+        border-top: 1rpx solid #eee;
+      }
+    }
+    .order_info {
+      background: #fff;
+      margin-right: 30rpx;
+      margin-left: 30rpx;
+      border-radius: 8rpx;
+      margin-top: 30rpx;
+      .head {
+        line-height: 64rpx;
+        font-size: 24rpx;
+        color: #999;
+        padding-left: 30rpx;
+        border-bottom: 1rpx solid #eee;
+      }
+      .order_no {
+        line-height: 96rpx;
+        padding: 0 30rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .text {
+          font-size: 32rpx;
+          color: #222;
+        }
+        .capy {
+          min-width: 76rpx;
+          text-align: center;
+          padding: 0rpx 20rpx;
+          border: 1rpx solid #eee;
+          border-radius: 24rpx;
+          font-size: 26rpx;
+          color: #999;
+          line-height: 48rpx;
+        }
+      }
+      .time {
+        line-height: 64rpx;
+        font-size: 24rpx;
+        color: #999;
+        border-top: 1rpx solid #eee;
+        padding-left: 30rpx;
+      }
+    }
+	}
+	.sendinfo {
+		position: fixed;
+		height: 128rpx;
+		width: 100%;
+		background: #ff5050;
+		text-align: center;
+		font: 700 36rpx/128rpx "";
+		color: #fff;
+		bottom: 0;
+		button {
+			border: none;
+			width: 100%;
+			height: 100%;
+			background: #ff5050;
+			font: 700 36rpx/128rpx "";
+			color: #fff;
+		}
+	}
+	.paysuccess {
+    width: 100%;
+    position: fixed;
+    top: 0;
+		left: 0;
+		z-index: 99;
+    background: rgba(0, 0, 0, 0.1);
+    .paysuccessbox {
+      height: 1000rpx;
+      background: #fff;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 216rpx 0 87rpx;
+      box-sizing: border-box;
+      .close {
+        width: 48rpx;
+        height: 48rpx;
+        position: absolute;
+        top: 40rpx;
+        right: 40rpx;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .img {
+        width: 128rpx;
+        height: 128rpx;
+        margin: 0 auto 80rpx;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .successful {
+        font: 700 40rpx/40rpx '';
+        text-align: center;
+      }
+      .block {
+        width: 581rpx;
+        height: 1rpx;
+        background-color: #cdcdcd;
+        margin: 21rpx auto;
+      }
+      .please_wait {
+        font: 26rpx/26rpx '';
+        color: #777;
+        text-align: center;
+      }
+      .returnIndex {
+        margin: 300rpx auto 0;
+        width: 480rpx;
+        height: 122rpx;
+        background-color: #ff6666;
+        box-shadow: 0rpx 16rpx 24rpx 0rpx #ff9999;
+        color: #fff;
+        font: 40rpx/122rpx '';
+        text-align: center;
+        border-radius: 16rpx;
+      }
+    }
+  }
+  .detail {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    .detailbox {
+      background: #fff;
+      width: 80%;
+      height: 500rpx;
+      border-radius: 20rpx;
+      overflow-y: scroll;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      .title {
+        font: 26rpx/44rpx "";
+        padding: 0 20rpx;
+        border-bottom: 1rpx solid #eee;
+      }
+      .detailbody {
+        padding: 20rpx;
+        font: 22rpx/44rpx "";
+        color: #999;
+      }
+    }
+  }
+}
+</style>
+<template>
+	<view class="order_detail">
+		<wxs module="tools" src="../../utils/addhttp.wxs"></wxs>
+		<image class="head_img" mode="widthFix" src="../../img/orderlistback.jpg"/>
+		<view class="status" wx:if="{{dataInfo.orderStatus==0}}">{{lanage.unsure}}</view>
+		<view class="status" wx:if="{{dataInfo.orderStatus==1}}">{{lanage.payed}}</view>
+		<view class="status" wx:if="{{dataInfo.orderStatus==2}}">{{lanage.sureed}}</view>
+		<view class="status" wx:if="{{dataInfo.orderStatus==5}}">{{lanage.drawbacked}}</view>
+		<view class="status" wx:if="{{dataInfo.orderStatus==6}}">{{lanage.closed}}</view>
+		<view class="status" wx:if="{{dataInfo.orderStatus==8}}">{{lanage.finished}}</view>
+		<view class="content">
+			<view wx:if="{{dataInfo}}">
+				<view class="head_text">
+					<view class="name" wx:if="{{dataInfo.name}}">{{lanage.receivename}}: {{dataInfo.name}}</view>
+          <view wx:if="{{dataInfo.orderType==1&&dataInfo.tableNo}}">{{lanage.ramadhin}}: {{dataInfo.tableNo}}</view>
+					<view>{{lanage.peopleNumber}}: {{dataInfo.peopleNumber}}</view>
+					<view wx:if="{{dataInfo.personaddress}}">{{lanage.Receiving_address}}: {{dataInfo.personaddress}}</view>
+					<view wx:if="{{dataInfo.hotel}}">{{lanage.Receiving_hotel}}: {{dataInfo.hotel}}</view>
+					<view wx:if="{{dataInfo.room}}">{{lanage.Room_number}}: {{dataInfo.room}}</view>
+					<view wx:if="{{dataInfo.tel}}">{{lanage.tel}}: {{dataInfo.tel}}</view>
+				</view>
+				<view class="info">
+					<view class="info_head">
+						<view>{{lanage.goods}} </view>
+						<view>{{lanage.count}}: <text>{{dataInfo.menuCount}}</text></view>
+					</view>
+					<view class="list_info">
+						<block wx:for="{{dataInfo.details}}" wx:key="{{item}}">
+							<view class="list">
+								<view class="left">
+									<image class="item_img" wx:if="{{item.mainImg}}" mode="widthFix" src="{{item.mainImg?tools.isaddhttp(item.mainImg):loadurl}}" lazy-load="true"/>
+									<view class="text">
+										<view class="text_1">{{item.menuName}}</view>
+										<view class="text_2" wx:if="{{item.extra}}">{{item.extra}}</view>
+									</view>
+								</view>
+								<view class="right">
+                  <view class='right-t'><image @tap='getMenuDel({{item.menuId}})' src="../../img/dian.png"/></view>
+									<view class='right-b'>
+                    <view class="count">x{{item.amount}}</view>
+                    <view class="price">
+                      <view class='price-t'>{{tools.currency(dataInfo.currency)}}{{tools.thousandBitSeparator(item.totalPrice)}}</view>
+                      <view class='rmb'><text wx:if="{{dataInfo.orderType==1&& exchangeRate != 0}}">(约合:￥{{tools.newTofixed((item.totalPrice)*exchangeRate,2)}})</text></view>
+                    </view>
+                  </view>
+								</view>
+							</view>
+						</block>
+						<view class="serve_content">
+							<view class="serve">
+								<text>{{lanage.The_service_fee}}</text>
+								<text>{{tools.currency(dataInfo.currency)}}{{dataInfo.serviceCharge?tools.thousandBitSeparator(dataInfo.serviceCharge):0}}<text class='rmb' wx:if="{{dataInfo.orderType==1&& exchangeRate != 0}}">(约合:￥{{tools.newTofixed((dataInfo.serviceCharge)*exchangeRate,2)}})</text></text>               
+							</view>
+							<view class="serve serve_line">
+								<text>{{lanage.Tax_point}}</text>
+								<text>{{tools.currency(dataInfo.currency)}}{{dataInfo.taxation?tools.thousandBitSeparator(dataInfo.taxation):0}}<text class='rmb' wx:if="{{dataInfo.orderType==1&& exchangeRate != 0}}">(约合:￥{{tools.newTofixed((dataInfo.taxation)*exchangeRate,2)}})</text></text>               
+							</view>
+							<view class="serve serve_line">
+								<text>{{lanage.Tableware_fee}}</text>
+								<text>{{tools.currency(dataInfo.currency)}}{{dataInfo.peopleNumber&&restaurantConfig.tablewareMon?tools.thousandBitSeparator(dataInfo.peopleNumber*restaurantConfig.tablewareMon):0}}<text class='rmb' wx:if="{{dataInfo.orderType==1&& exchangeRate != 0}}">(约合:￥{{tools.newTofixed((dataInfo.peopleNumber*restaurantConfig.tablewareMon)*exchangeRate,2)}})</text></text>
+							</view>
+							<view class="serve serve_line" wx:if="{{dataInfo.orderType!=1}}" > 
+								<text>{{lanage.Distribution_fee}}</text>
+								<text>{{tools.currency(dataInfo.currency)}}{{dataInfo.deliverFee?dataInfo.deliverFee:0}}</text>
+							</view>
+						</view>
+						<view class="total_price">
+							<view>
+								<text class="text_1">{{lanage.total}}: </text>
+								<text class="text_2">{{tools.currency(dataInfo.currency)}}{{tools.thousandBitSeparator(dataInfo.orderTotalPrice)}}</text>
+                <text class='rmb' wx:if="{{dataInfo.orderType==1&& exchangeRate != 0}}">(约合:￥{{tools.newTofixed((dataInfo.orderTotalPrice)*exchangeRate,2)}})</text>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="store_info">
+					<view class="head">{{lanage.seller}}</view>
+					<view class="store_content">
+						<view class="store_name">
+							<text>{{dataInfo.placeInfo.name}}</text>
+							<image class="icon" mode="widthFix" src="../../img/enter.png"/>
+						</view>
+						<view class="phone">
+							<view>{{lanage.tel}}: {{dataInfo.placeInfo.phones}}</view>
+							<view class="call" @tap="callphone()">{{lanage.phonecall}}</view>
+						</view>
+					</view>
+					<view class="adress">
+						{{lanage.Address}}: {{dataInfo.placeInfo.address}}
+					</view>
+				</view>
+				<view class="order_info">
+					<view class="head">{{lanage.orderinfo}}</view>
+					<view class="order_no">
+						<view class="text">{{lanage.ordertxt}}: <text>{{dataInfo.orderNo}}</text></view>
+						<view class="capy" @tap="copyLink()">{{lanage.copy}}</view>
+					</view>
+					<view class="time">
+						{{dataInfo.orderDate}}
+					</view>
+				</view>
+			</view>
+			<view class="no_data_img" wx:else>
+				<image mode="widthFix" src="../../img/infoNull@2x.png"/>
+				<view>{{lanage.no_data}}</view>
+			</view>
+		</view>
+		<view class="footer">
+			<view class="sendinfo" wx:if="{{dataInfo.orderStatus==0&&dataInfo.orderType!=1}}" @tap="toPay">{{lanage.Pay}} </view>
+		  <view class="sendinfo" wx:else>
+				<button open-type="contact" bindcontact="handleContact" plain="true">{{lanage.contact}}</button>
+			</view>
+		</view>
+    <view class='detail' wx:if="{{showMenuDel}}" style="height:{{oheight}}px" @tap="closedetail">
+      <view class="detailbox" catchtap="returndetail">
+        <view class='title'>菜品详情</view>
+        <view class='detailbody'><rich-text nodes="{{menuDetail?menuDetail:''}}"></rich-text></view>
+      </view>
+    </view>
+		<view class="paysuccess" wx:if="{{issuccess}}" style="height:{{oheight}}px" @tap="closesuccess">
+			<view class="paysuccessbox" catchtap="returnall">
+				<view class="close"  @tap="closesuccess"><image src="../../img/close.png"/></view>
+				<view class="img"><image src="../../img/success.png"/></view>
+				<view class="successful">{{lanage.Place_an_order_successfully}}</view>
+				<view class="block"></view>
+				<view class="please_wait">{{lanage.Please_wait_and_to_checkout_counter}}</view>
+				<view class="returnIndex" @tap="addfood">{{lanage.Close}}</view>
+		  </view>
+		</view>
+	</view> 
+</template>
+
+<script>
+import wepy from 'wepy';
+import apifunc from '@/api/index.js';
+import { baseUrl } from '@/utils/env.js';
+import { tohtml } from '@/utils/tool.js';
+export default class orderDetail extends wepy.page {
+  data = {
+    lang: '',
+    lanage: '',
+    orderNo: '',
+    dataInfo: '',
+    sellerdetail: '',
+		baseUrl: '',
+		restaurantConfig:"",
+		payParam:"",
+		issuccess:false,
+    oheight:"",
+    exchangeRate:0,
+    loadurl:"",
+    menuDetail:"",
+    showMenuDel:false
+  };
+  methods = {
+    returndetail() {
+
+    },
+    closedetail() {
+      this.showMenuDel=false;
+    },
+    getMenuDel(id){
+      this.showMenuDel = true;
+  			var that = this
+      apifunc
+        .getMenuDel(
+          `/tour/goodsMenu/getMenuInfo?id=${id}`,
+          'get',
+          ''
+        )
+        .then(function(res) {
+          if (res.meta.success) {
+            if(res.data.description){
+            that.menuDetail = tohtml(res.data.description);
+            that.$apply();
+  					}
+          }
+        })
+  		},
+		handleContact(e) {
+      console.log(e.path);
+      console.log(e.query);
+    },
+		returnall() {},
+		closesuccess() {
+      var that = this;
+      wx.redirectTo({
+        url: '/pages/orderDetail/index?orderNo='+that.orderNo,
+				success: function() {},
+				fail: function() {},
+				complete: function() {}
+      });
+    },
+		addfood() {
+      var that = this;
+      wx.redirectTo({
+        url: '/pages/orderDetail/index?orderNo='+that.orderNo,
+				success: function() {},
+				fail: function() {},
+				complete: function() {}
+      });
+    },
+		toPay() {
+			var that=this;
+			if(this.payParam) {
+				wx.requestPayment({
+          timeStamp: that.payParam.timeStamp,
+          nonceStr: that.payParam.nonceStr,
+          package: that.payParam.packageData,
+          signType: that.payParam.signType,
+          paySign: that.payParam.sign,
+          success: function(res) {
+            that.issuccess = true;
+            that.$apply();
+          },
+          fail: function(res) {
+            if (res.errMsg == 'requestPayment:fail cancel') {
+              wx.showToast({
+                title: '用户点击取消了支付',
+                icon: 'none',
+                duration: 1000
+              });
+            }
+            wx.showToast({
+              title: '用户支付失败',
+              icon: 'none',
+              duration: 500
+            });
+          },
+          complete: function(res) {}
+        });
+			} else {
+				wx.showToast({
+					title:"该订单已过期，请重新下单!",
+					icon: 'none',
+					duration: 1000
+				});
+			}
+		},
+    callphone() {
+      if (this.sellerdetail) {
+        wx.makePhoneCall({
+          phoneNumber: this.sellerdetail //仅为示例，并非真实的电话号码
+        });
+      }
+    },
+    copyLink() {
+      if (this.orderNo) {
+        wx.setClipboardData({
+          data: this.orderNo,
+          success: function(res) {
+            wx.getClipboardData({
+              success: function(res) {}
+            });
+          }
+        });
+      }
+    },
+    contentHttp(str) {
+      var filter = {
+        numberToFix: function(value) {
+          if (str.indexOf('http') > -1) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      };
+    }
+  };
+  orderDetail() {
+    var _this = this;
+    if (this.orderNo) {
+      apifunc
+        .getOrderDetail(
+          `/tour/menuOrder/getByOrder?lang=${_this.lang}&orderNo=${
+            _this.orderNo
+          }`,
+          'get',
+          ''
+        )
+        .then(function(res) {
+          if (res.meta.success) {
+            _this.dataInfo = res.data;
+            if (_this.dataInfo.placeInfo) {
+              _this.sellerdetail = _this.dataInfo.placeInfo.phones;
+              if (_this.dataInfo.placeInfo.restaurantConfig) {
+                _this.restaurantConfig =
+                  _this.dataInfo.placeInfo.restaurantConfig;
+              }
+						}
+						if(_this.dataInfo.payParam){
+						_this.payParam = JSON.parse(_this.dataInfo.payParam)
+					}
+					console.log(_this.payParam)
+            if (_this.dataInfo.address) {
+              if (_this.dataInfo.address.split('|')) {
+                if (
+                  _this.dataInfo.address.split('|')[0] &&
+                  _this.dataInfo.address.split('|')[1]
+                ) {
+                  _this.dataInfo.name =
+                    _this.dataInfo.address.split('|')[0] +
+                    _this.dataInfo.address.split('|')[1];
+                }
+                if (_this.dataInfo.address.split('|')[2]) {
+                  _this.dataInfo.tel = _this.dataInfo.address.split('|')[2];
+                }
+                if (_this.dataInfo.address.split('|')[4]) {
+                  _this.dataInfo.personaddress = _this.dataInfo.address.split(
+                    '|'
+                  )[4];
+                }
+                if (_this.dataInfo.address.split('|')[3]) {
+                  _this.dataInfo.hotel = _this.dataInfo.address.split('|')[3];
+                }
+                if (_this.dataInfo.address.split('|')[5]) {
+                  _this.dataInfo.room = _this.dataInfo.address.split('|')[5];
+                }
+              }
+              if (_this.dataInfo.details.length != 0) {
+                var detaillength = _this.dataInfo.details.length;
+                for (var i = 0; i <= detaillength - 1; i++) {
+                  if (_this.dataInfo.details[i].extraContent) {
+                    var extraarr = JSON.parse(
+                      _this.dataInfo.details[i].extraContent
+                    );
+                    var extratxt = '';
+                    for (var j = 0; j <= extraarr.length - 1; j++) {
+                      extratxt += ',' + extraarr[j].values;
+                    }
+                    _this.dataInfo.details[i].extra = extratxt.slice(1);
+                  }
+                }
+              }
+            }
+          } else {
+            wx.showToast({
+              title: res.meta.message,
+              icon: 'none',
+              duration: 1000
+            });
+          }
+          _this.$apply();
+        });
+    } else {
+      wx.showToast({
+        title: this.lanage.Order_number_does_not_exist,
+        icon: 'none',
+        duration: 1000
+      });
+    }
+  }
+  onLoad(options) {
+		var res = wx.getSystemInfoSync();
+    this.oheight = res.windowHeight;
+		this.baseUrl = baseUrl;
+		this.issuccess=false;
+    if (options.orderNo) {
+      this.orderNo = options.orderNo;
+    }
+    if (wx.getStorageSync('exchangeRate')) {
+      this.exchangeRate = wx.getStorageSync('exchangeRate');
+    }
+    this.menuDetail="";
+    this.showMenuDel=false;
+    this.loadurl = this.$parent.globalData.loadurl;
+    this.lanage = this.$parent.globalData.language;
+    this.lang = this.$parent.globalData.langtxt;
+    this.orderDetail();
+    this.$apply();
+  }
+}
+</script>
+	

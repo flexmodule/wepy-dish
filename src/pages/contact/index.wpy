@@ -1,0 +1,36 @@
+<style lang="less">
+	.contact {
+	}
+</style>
+<template>
+	<view class="contact">
+
+	</view>
+</template>
+
+<script>
+	import wepy from 'wepy'
+	import apifunc from '@/api/index.js';
+	import {baseUrl} from "@/utils/env.js";
+	export default class contact extends wepy.page {
+		data = {
+			lanage:"",
+			lang:"",
+			orderno:""
+		}
+		methods = {
+		
+		}
+		onLoad(options) {
+			if (options && options.orderno) {
+      this.orderno = options.orderno;
+    } else {
+      this.orderno = '';
+    }
+			this.lanage = this.$parent.globalData.language;
+			this.lang = this.$parent.globalData.langtxt
+			this.$apply();
+		}
+	}
+</script>
+	

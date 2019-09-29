@@ -1,0 +1,78 @@
+var isaddhttp = function (str) {
+  if(str.indexOf("http") > -1) {
+		return str
+	} else {
+		return baseUrl2+str
+	}
+}
+var currency = function(currencyName){
+	if(currencyName != null || currencyName){
+		currencyName = currencyName.replace('HKD', 'HK$')   //港币
+			.replace('JPY', '￥')   //日元
+			.replace('KRW', '₩')   //韩元
+			.replace('MYR', 'RM')  //林吉特
+			.replace('IDR', 'Rp')  //印尼盾
+			.replace('VND', '₫')   //越南盾
+			.replace('THB', '฿')   //泰铢
+			.replace('CNY', '¥')   //人民币
+			
+	}
+	return currencyName;
+}
+var newTofixed = function(num,digital){  
+	return Number(num).toFixed(digital);
+}  
+var splitString = function(string,index){
+	if(string){
+		var splitString = 	string.split('|')[index]
+	}
+	return splitString;
+}
+var splithotelString = function(string,index){
+	var splitString
+	if(string){
+		console.log(string)
+		if(string.split('/')&&string.split('/')[index]) {
+			 splitString = 	string.split('/')[index]
+		} else {
+			splitString=""
+		}
+	}
+	return splitString;
+}
+var thousandBitSeparator=function (num) {
+	if(num!='') {
+		if(num.toString().indexOf('.')==-1) {
+			var num = (num || 0).toString();
+			var result = '';
+			while (num.length > 3) {
+				result = ',' + num.slice(-3) + result;
+				num = num.slice(0, num.length - 3);
+			}
+			if (num) { result = num + result; }
+			return result;
+		} else {
+			var index=num.toString().indexOf('.');
+			var numtxt=num.toString().substring(0,index);
+			var othernum=num.toString().substring(index);
+			var num = (numtxt || 0).toString();
+			var result = '';
+			while (num.length > 3) {
+				result = ',' + num.slice(-3) + result;
+				num = num.slice(0, num.length - 3);
+			}
+			if (num) { result = num + result+othernum; }
+			return result;
+		}
+	} else {
+		return ""
+	}
+}
+module.exports = {
+  isaddhttp: isaddhttp,
+	currency:currency,
+	newTofixed:newTofixed,
+	splitString:splitString,
+	splithotelString:splithotelString,
+	thousandBitSeparator:thousandBitSeparator
+};
